@@ -1,0 +1,16 @@
+{
+    "description": "PROJETO PDS",
+    "authors": [
+        {
+            "name": "Antonio M P Castro",
+            "email": "antonio.m.fg38@outlook.com"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "App\\": "app",
+            "Core\\": "core"
+        }
+    },
+    "require": {}
+}
