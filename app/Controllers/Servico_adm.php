@@ -2,17 +2,17 @@
 
 namespace App\Controllers;
 
-if(!defined('4578S9')){
-    header("Location: /");
-    die("Erro: Página não encontrada!");
-}
-
-
 class Servico_adm
 {
     
     private $dados;
     
+    function __construct()
+    {
+        $verificarLogin = new \App\Lib\Adm();
+    }
+
+
     public function index() {
         $visualizarLogin = new \App\Models\AdmsUser();
         $this->dados['id'] = $_SESSION['tipo_user_id'];

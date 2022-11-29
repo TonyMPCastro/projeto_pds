@@ -2,17 +2,15 @@
 
 namespace App\Controllers;
 
-if(!defined('4578S9')){
-    header("Location: /");
-    die("Erro: Página não encontrada!");
-}
-
 class Home
 {
     
     private $dados;
 
+    function __construct(){
+        $verificarLogin = new \App\Lib\Adm();
 
+    }
      
     public function index() {
         $visualizarLogin = new \App\Models\AdmsUser();

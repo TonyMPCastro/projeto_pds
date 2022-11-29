@@ -2,28 +2,34 @@
 
 namespace App\Controllers;
 
-if (!defined('4578S9')) {
-    header("Location: /");
-    die("Erro: Página não encontrada!");
-}
-
 class Login
 {
 
     private $dados;
 
-    public function index()
+    function __construct()
     {
+        $verificarLogin = new \App\Lib\Adm();
+    }
+
+
+    public function index() {
 
         $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
+        $verificarLogin = new \App\Lib\Adm();
+        $verificarLogin->verify_login();
+
         if (!empty($this->dados['SendLogin'])) {
+
+
             $visualizarLogin = new \App\Models\AdmsLogin();
             $captcha_data = $this->dados['g-recaptcha-response'];
 
             if ($captcha_data) {
 
                 $visualizarLogin->login($this->dados);
+
                 if ($visualizarLogin->getResultado()) {
 
                     if ($_SESSION['tipo_user_id'] == 2) {
@@ -33,7 +39,6 @@ class Login
 
                         $urlDestino = URL . "home/onShow";
                     }
-
 
                     header("Location: $urlDestino");
                 } else {

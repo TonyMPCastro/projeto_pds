@@ -6,7 +6,7 @@ if (isset($this->dados['menu'])) {
 ?>
 
 <head>
-  <!-- Required meta tags -->
+         <!-- Required meta tags -->
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?php echo URL . 'app/assets/vendors/mdi/css/materialdesignicons.min.css'; ?>">
   <link rel="stylesheet" href="<?php echo URL . 'app/assets/vendors/css/vendor.bundle.base.css'; ?>">
@@ -15,8 +15,6 @@ if (isset($this->dados['menu'])) {
   <!-- Layout styles -->
   <link rel="stylesheet" href="<?php echo URL . 'app/assets/css/style.css'; ?>">
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="<?php echo URL . 'app/assets/images/favicon.png'; ?>" />
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" />
 
 </head>
 
@@ -26,10 +24,10 @@ if (isset($this->dados['menu'])) {
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
         <a class="sidebar-brand brand-logo" href="<?php echo URL . 'home/onShow' ?>">
-          <img src="<?php echo URL . 'app/img/logo_h.png'; ?>" alt="logo" />
+          <img src="<?php echo URL . 'app/assets/images/logo-derma-h.svg'; ?>" alt="logo" />
         </a>
         <a class="sidebar-brand brand-logo-mini" href="<?php echo URL . 'home/onShow' ?>">
-          <img src="<?php echo URL . 'app/img/logo-mini-h.png'; ?>" alt="logo" />
+          <img src="<?php echo URL . 'app/assets/images/logo-derma.svg'; ?>"  alt="logo" />
         </a>
       </div>
       <ul class="nav">

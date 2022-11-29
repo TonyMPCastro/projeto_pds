@@ -7473,8 +7473,13 @@
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; 
+ 
+ 
+  --background-color: #d9d3c7;
 
+
+}
 *,
 *::before,
 *::after {
@@ -20340,7 +20345,7 @@ div.tagsinput {
 /* Navbar */
 .navbar {
   font-weight: normal;
-  background: #00e8fff2;
+  background: var(--background-color);
   left: 244px;
   transition: left 0.25s ease;
   -webkit-transition: left 0.25s ease;
@@ -20623,7 +20628,7 @@ div.tagsinput {
 /* Sidebar */
 .sidebar {
   min-height: calc(100vh - 70px);
-  background: #00e8fff2; /*color primiry*/
+  background: var(--background-color); /*color primiry*/
   font-weight: normal;
   padding: 0;
   width: 244px;
@@ -20637,7 +20642,7 @@ div.tagsinput {
     -webkit-transition: width 0.25s ease, background 0.25s ease;
     -moz-transition: width 0.25s ease, background 0.25s ease;
     -ms-transition: width 0.25s ease, background 0.25s ease;
-    background: #00e8fff2;/*color primiry*/
+    background: var(--background-color);/*color primiry*/
     width: 244px;
     height: 70px; }
     @media (max-width: 991px) {
@@ -20661,9 +20666,9 @@ div.tagsinput {
       .sidebar .sidebar-brand-wrapper .sidebar-brand.brand-logo-mini {
         display: none; }
         .sidebar .sidebar-brand-wrapper .sidebar-brand.brand-logo-mini img {
-          width: calc(80px - 50px);
-          /* max-width: 100%;
-          height: 28px; */
+          width: calc(90px - 45px);
+           max-width: 100%;
+          height: 28px; 
           margin: auto; }
   .sidebar .nav {
     overflow: hidden;
@@ -20905,7 +20910,7 @@ div.tagsinput {
           background: transparent; }
     .sidebar .nav:not(.sub-menu) > .nav-item:hover:not(.nav-category):not(.account-dropdown) > .nav-link {
       background: #fff;
-      color: #00e8fff2; }
+      color: var(--background-color); }
     .sidebar .nav .menu-items:nth-child(5n+1) .nav-link .menu-icon i {
       color: #0090e7; }
     .sidebar .nav .menu-items:nth-child(5n+2) .nav-link .menu-icon i {
@@ -21018,7 +21023,7 @@ div.tagsinput {
           display: flex;
           -webkit-align-items: center;
           align-items: center;
-          background: #00e8fff2;
+          background: var(--background-color);
           color: #FFF;
           padding: 0.5rem 1.4rem;
           left: 70px;
