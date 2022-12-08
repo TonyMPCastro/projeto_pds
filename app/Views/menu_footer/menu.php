@@ -6,7 +6,7 @@ if (isset($this->dados['menu'])) {
 ?>
 
 <head>
-         <!-- Required meta tags -->
+  <!-- Required meta tags -->
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?php echo URL . 'app/assets/vendors/mdi/css/materialdesignicons.min.css'; ?>">
   <link rel="stylesheet" href="<?php echo URL . 'app/assets/vendors/css/vendor.bundle.base.css'; ?>">
@@ -27,7 +27,7 @@ if (isset($this->dados['menu'])) {
           <img src="<?php echo URL . 'app/assets/images/logo-derma-h.svg'; ?>" alt="logo" />
         </a>
         <a class="sidebar-brand brand-logo-mini" href="<?php echo URL . 'home/onShow' ?>">
-          <img src="<?php echo URL . 'app/assets/images/logo-derma.svg'; ?>"  alt="logo" />
+          <img src="<?php echo URL . 'app/assets/images/logo-derma.svg'; ?>" alt="logo" />
         </a>
       </div>
       <ul class="nav">
@@ -216,7 +216,7 @@ if (isset($this->dados['menu'])) {
                 </div>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-                <h6 class="p-3 mb-0">Profile</h6>
+                <h6 class="p-3 mb-0">Perfil</h6>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
@@ -225,7 +225,7 @@ if (isset($this->dados['menu'])) {
                     </div>
                   </div>
                   <div class="preview-item-content">
-                    <p class="preview-subject mb-1">Settings</p>
+                    <p class="preview-subject mb-1">Configurações</p>
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -249,4 +249,5 @@ if (isset($this->dados['menu'])) {
           </button>
         </div>
 
+      
       </nav>

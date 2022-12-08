@@ -16,7 +16,7 @@ class Cliente
     {
 
         $visualizarLogin = new \App\Models\AdmsUser();
-        $this->dados['id'] = $_SESSION['tipo_user_id'];
+        $this->dados['tipo_user_id'] = $_SESSION['tipo_user_id'];
         $this->dados['menu'] = $visualizarLogin->menu_adm($this->dados);
         $carregarView = new \Core\ConfigView("Views/cliente/cliente", $this->dados);
         $carregarView->renderizar();

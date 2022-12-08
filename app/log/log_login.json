@@ -1,79 +1,26 @@
 {
     "id_user": "1",
-    "0": "1",
+    "0": "Log Login",
     "nome_user": "ANTONIO CASTRO",
     "1": "ANTONIO CASTRO",
     "email": "antonio@edukar.com",
     "2": "antonio@edukar.com",
     "tipo_user_id": "1",
     "3": "1",
-    "data_hora_acesso": "21-11-2022 19:0:55"
-}
-
-{
-    "id_user": "1",
-    "0": "1",
-    "nome_user": "ANTONIO CASTRO",
-    "1": "ANTONIO CASTRO",
-    "email": "antonio@edukar.com",
-    "2": "antonio@edukar.com",
-    "tipo_user_id": "1",
-    "3": "1",
-    "data_hora_acesso": "21-11-2022 19:0:47"
-}
-
-{
-    "id_user": "1",
-    "0": "1",
-    "nome_user": "ANTONIO CASTRO",
-    "1": "ANTONIO CASTRO",
-    "email": "antonio@edukar.com",
-    "2": "antonio@edukar.com",
-    "tipo_user_id": "1",
-    "3": "1",
-    "data_hora_acesso": "21-11-2022 19:0:05"
-}
-{
-    "id_user": "1",
-    "0": "1",
-    "nome_user": "ANTONIO CASTRO",
-    "1": "ANTONIO CASTRO",
-    "email": "antonio@edukar.com",
-    "2": "antonio@edukar.com",
-    "tipo_user_id": "1",
-    "3": "1",
-    "data_hora_acesso": "21-11-2022 19:0:48"
-}
-
-
-{
-    "id_user": "1",
-    "0": "1",
-    "nome_user": "ANTONIO CASTRO",
-    "1": "ANTONIO CASTRO",
-    "email": "antonio@edukar.com",
-    "2": "antonio@edukar.com",
-    "tipo_user_id": "1",
-    "3": "1",
-    "data_hora_acesso": "21\/11\/2022 19:20:29"
+    "data_hora_acesso": "07\/12\/2022 22:43:04"
 }{
-    "id_user": "1",
-    "0": "1",
-    "nome_user": "ANTONIO CASTRO",
-    "1": "ANTONIO CASTRO",
-    "email": "antonio@edukar.com",
-    "2": "antonio@edukar.com",
-    "tipo_user_id": "1",
-    "3": "1",
-    "data_hora_acesso": "21\/11\/2022 19:23:18"
+    "0": "Log Insert Servico",
+    "id_servico": {
+        "id": null,
+        "nome": "Servi\u00e7o 2",
+        "valor": "79.1",
+        "status": "2"
+    }
 }{
-    "id_user": "1",
-    "0": "1",
-    "nome_user": "ANTONIO CASTRO",
-    "1": "ANTONIO CASTRO",
-    "email": "antonio@edukar.com",
-    "2": "antonio@edukar.com",
     "tipo_user_id": "1",
-    "3": "1",
-    "data_hora_acesso": "21\/11\/2022 15:25:18"
-}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"21\/11\/2022 16:20:59"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"21\/11\/2022 16:22:52"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"21\/11\/2022 16:23:55"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"21\/11\/2022 17:15:10"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"21\/11\/2022 18:08:04"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"21\/11\/2022 18:23:41"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"21\/11\/2022 19:36:08"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"21\/11\/2022 19:36:31"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"21\/11\/2022 21:39:07"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 12:27:11"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 12:27:26"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 12:43:21"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 12:50:55"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 12:51:08"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 12:54:20"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 13:18:53"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 13:22:16"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 13:22:31"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 13:26:44"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 13:30:07"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 13:34:24"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 13:36:09"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 13:43:18"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 13:57:56"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 14:29:13"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 14:40:32"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 14:44:44"}{"id_user":"1","0":"1","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"22\/11\/2022 16:33:28"}
+    "id_user": "1",
+    "nome_user": "ANTONIO CASTRO",
+    "email": "antonio@edukar.com",
+    "data_hora_saida": "07\/12\/2022 22:43:37",
+    "0": "Log Saida"
+}{"id_user":"1","0":"Log Login","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"07\/12\/2022 22:45:36"}{"tipo_user_id":"1","id_user":"1","nome_user":"ANTONIO CASTRO","email":"antonio@edukar.com","data_hora_saida":"07\/12\/2022 22:47:03","0":"Log Saida"}{"id_user":"1","0":"Log Login","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"07\/12\/2022 22:49:02"}{"0":"Log Delete Servico","id_servico":"7"}{"tipo_user_id":"1","id_user":"1","nome_user":"ANTONIO CASTRO","email":"antonio@edukar.com","data_hora_saida":"07\/12\/2022 22:49:48","0":"Log Saida"}{"id_user":"1","0":"Log Login","nome_user":"ANTONIO CASTRO","1":"ANTONIO CASTRO","email":"antonio@edukar.com","2":"antonio@edukar.com","tipo_user_id":"1","3":"1","data_hora_acesso":"07\/12\/2022 22:49:55"}{"0":"Log Insert Servico","id_servico":{"id":null,"nome":"TESTE","valor":"100.55","status":"2"}}{"0":"Log Insert Servico","id_servico":{"id":null,"nome":"Novo Servico","valor":"1000","status":"2"}}

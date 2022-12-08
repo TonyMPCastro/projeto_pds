@@ -21,6 +21,7 @@ class Conn
     protected function connect()
     {
         $this->connect = new PDO($this->db . ':host=' . $this->host . ';dbname=' . $this->dbname, $this->user, $this->pass);
+        $this->connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $this->connect;
     }
 
@@ -28,7 +29,6 @@ class Conn
     {
         // Abre ou cria o arquivo bloco1.txt
         // "a" representa que o arquivo é aberto para ser escrito
-
 
         $path = "app/log/";
         if (!is_dir($path)) {

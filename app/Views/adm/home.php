@@ -19,3 +19,7 @@ if (!defined('4578S9')) {
 </div>
 
 <?php include "app/Views/menu_footer/footer.php"; ?>
+
+<script>
+   toastr.success("Hello World!");
+</script>

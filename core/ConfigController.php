@@ -70,6 +70,10 @@ class ConfigController
           if($this->urlMetodo == "onEdit"){
             $classeCarregar->onEdit();  
           }
+
+          if($this->urlMetodo == "onDelete"){
+            $classeCarregar->onDelete();  
+          }
         
     }
     

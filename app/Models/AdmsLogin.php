@@ -49,6 +49,7 @@ class AdmsLogin extends Conn
             $_SESSION['usuario_email'] = $this->resultadoBd['email'];
             date_default_timezone_set('America/Sao_Paulo');
             $this->resultadoBd['data_hora_acesso'] = date("d/m/Y H:i:s");
+            $this->resultadoBd[0] = "Log Login";
             $this->log(json_encode($this->resultadoBd,true));
 
             $this->resultado = true;
