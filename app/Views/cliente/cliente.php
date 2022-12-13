@@ -18,6 +18,8 @@ if (isset($this->dados['lista_em_abertas'])) {
 
 <pre>
 <?php
+
+
 print_r($lista_em_abertas)
 ?>
 
