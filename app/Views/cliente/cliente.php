@@ -7,6 +7,10 @@ if (!defined('4578S9')) {
 if (isset($this->dados['menu'])) {
     $menu = $this->dados['menu'];
 }
+
+if (isset($this->dados['lista_em_abertas'])) {
+    $lista_em_abertas = $this->dados['lista_em_abertas'];
+}
 ?>
 <?php include "app/Views/menu_footer/menu.php"; 
 
@@ -14,7 +18,7 @@ if (isset($this->dados['menu'])) {
 
 <pre>
 <?php
-print_r($this->dados['lista_em_abertas'])
+print_r($lista_em_abertas)
 ?>
 
 </pre>
