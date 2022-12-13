@@ -1,0 +1,47 @@
+<?php
+
+namespace App\Models;
+
+if (!defined('4578S9')) {
+    header("Location: /");
+    die("Erro: Página não encontrada!");
+}
+
+use PDO;
+use PDOException;
+
+
+class AdmCliente extends Conn
+{
+
+    private $dados;
+    private $resultadoBd;
+    private object $conn;
+
+
+    public function get_em_aberto(array $dados = null)
+    {
+        try {
+            $this->dados = $dados;
+            $this->conn = $this->connect();
+            $query_val_login = "SELECT m.id,m.user_id,
+            u.nome_user,u.email,u.telefone,m.data_hora_cri            
+            FROM marcacao_servico m
+            join user u on  m.user_id = u.id_user           
+            where m.status = 1
+            order by data_hora_cri ASC";
+            $result_val_login = $this->conn->prepare($query_val_login);
+            $result_val_login->execute();
+            $this->resultadoBd = json_decode(json_encode($result_val_login->fetchAll()), FALSE);
+            if ($this->resultadoBd) {
+                return $this->resultadoBd;
+            } else {
+                throw new PDOException("Erro: Não foi possível executar a declaração sql");
+                return $this->resultadoBd;
+            }
+        } catch (PDOException $erro) {
+            echo $erro->getMessage();
+        }
+    }
+
+}
