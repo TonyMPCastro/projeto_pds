@@ -17,8 +17,8 @@ if (isset($this->dados['lista_em_abertas'])) {
 ?>
 
 <pre>
-<?php
-// Antonio que não sabe php 
+
+<!--Antonio que não sabe php -->
 <!-- partial -->
 <div class="main-panel">
   <div class="content-wrapper">
@@ -90,8 +90,8 @@ if (isset($this->dados['lista_em_abertas'])) {
 
 
 
+<?php
 
-//
 print_r($lista_em_abertas)
 ?>
 
