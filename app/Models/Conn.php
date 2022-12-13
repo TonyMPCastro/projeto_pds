@@ -12,10 +12,10 @@ use PDO;
 class Conn
 {
     private string $db = "mysql";
-    private string $host = "localhost";
+    private string $host = "localhost:3307";
     private string $user = "root";
     private string $pass = "";
-    private string $dbname = "edukar_gestao";
+    private string $dbname = "edukar";
     public object $connect;
 
     protected function connect()
