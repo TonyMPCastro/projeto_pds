@@ -11,7 +11,6 @@ use PDO;
 
 class Conn
 {
-    
     private string $db = "mysql";
     private string $host = "localhost";//Host de acesso
     private string $user = "root";//usuario de acesso
