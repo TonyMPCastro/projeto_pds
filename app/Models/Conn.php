@@ -17,6 +17,7 @@ class Conn
     private string $pass = "";
     private string $dbname = "edukar_gestao";
     public object $connect;
+    
 
     protected function connect()
     {
