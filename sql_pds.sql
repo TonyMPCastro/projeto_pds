@@ -98,6 +98,7 @@ CREATE TABLE `marcacao_servico` (
   `forma_pagamento_id` int(11) NOT NULL,
   `horarios_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `horario_agendado` datetime ,
   `data_hora_at` datetime NOT NULL,
   `data_hora_cri` datetime NOT NULL,
   `status` int(11) NOT NULL

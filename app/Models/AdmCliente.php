@@ -25,9 +25,12 @@ class AdmCliente extends Conn
             $this->dados = $dados;
             $this->conn = $this->connect();
             $query_val_login = "SELECT m.id,m.user_id,
-            u.nome_user,u.email,u.telefone,m.data_hora_cri            
+            u.nome_user,u.email,u.telefone,m.data_hora_cri,
+            s.dia,h.horario            
             FROM marcacao_servico m
-            join user u on  m.user_id = u.id_user           
+            join user u on  m.user_id = u.id_user 
+            join horarios h on m.horarios_id = h.id  
+            join semana s on s.id = h.semana_id          
             where m.status = 1
             order by data_hora_cri ASC";
             $result_val_login = $this->conn->prepare($query_val_login);
