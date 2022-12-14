@@ -11,13 +11,14 @@ use PDO;
 
 class Conn
 {
+    
     private string $db = "mysql";
     private string $host = "localhost";
     private string $user = "root";
     private string $pass = "";
     private string $dbname = "edukar_gestao";
     public object $connect;
-    
+
 
     protected function connect()
     {
