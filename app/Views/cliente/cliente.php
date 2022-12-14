@@ -11,12 +11,13 @@ if (isset($this->dados['menu'])) {
 if (isset($this->dados['lista_em_abertas'])) {
     $lista_em_abertas = $this->dados['lista_em_abertas'];
 }
+$table = 3;
 ?>
-<?php include "app/Views/menu_footer/menu.php"; 
-
+<?php 
+//include "app/Views/menu_footer/menu.php"; 
+// Incluir para chamada de 
+require_once("app/Views/menu_footer/menu.php");
 ?>
-
-<pre>
 
 <!--Antonio que não sabe php -->
 <!-- partial -->
@@ -24,13 +25,13 @@ if (isset($this->dados['lista_em_abertas'])) {
   <div class="content-wrapper">
     <a href="<?php echo URL . 'home/onShow' ?>" class="menu-link" title="Home"><i class="mdi mdi-home"></i></a>
     >
-    <a href="<?php echo URL . 'servico_adm/index' ?>" class="menu-link"><span>LISTAGEM DE SERVIÇOS</span></a>
+    <a href="<?php echo URL . 'servico_adm/index' ?>" class="menu-link"><span>LISTAGEM DE HORÁRIOS</span></a>
 
     <br>
     <br>
     <div class="">
       <div class="card-header">
-        <strong>Listagem de Serviços</strong>
+        <strong>HORÁRIOS</strong>
       </div>
       <br>
       <div class="text-center">
@@ -42,18 +43,19 @@ if (isset($this->dados['lista_em_abertas'])) {
           <tr>
             <th>#</th>
             <th>Nome</th>
-            <th>Valor</th>
-            <th>Staus</th>
-            <!-- <th>Id Tipo</th> -->
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Dia - Hora</th>
+            <!--<th></th>-->
             <!-- <th>Id_user</th> -->
           </tr>
         </thead>
         <tbody>
-          <?php if ($servicos) {
-            foreach ($servicos as $servico) { ?>
+          <?php if ($lista_em_abertas) {
+            foreach ($lista_em_abertas as $lista_em_abertas_1) { ?>
               <tr>
                 <td style='font-size:28px'>
-                  <a href="<?php echo URL . 'servico_adm/onEdit?id=' . $servico->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
+                  <a href="<?php echo URL . 'servico_adm/onEdit?id=' . $lista_em_abertas_1->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
                     <i style="color:#0090e7;" class='mdi mdi-account-plus'></i>
                   </a>
                   &nbsp;&nbsp;&nbsp;
@@ -61,9 +63,10 @@ if (isset($this->dados['lista_em_abertas'])) {
                     <i style="color:red;" class='mdi mdi-delete'></i>
                   </a>
                 </td>
-                <td><?= $servico->nome; ?></td>
-                <td><?= $servico->valor; ?></td>
-                <td><?= ($servico->status == 2) ? "Ativo" : "Desativado"; ?></td>
+                <td><?= $lista_em_abertas_1->nome_user; ?></td>
+                <td><?= $lista_em_abertas_1->email ?></td>
+                <td><?= $lista_em_abertas_1->telefone  ?></td>
+                <td><?= $lista_em_abertas_1->dia.' - '.$lista_em_abertas_1->horario  ?></td>
               </tr>
           <?php  }
           }
@@ -71,11 +74,12 @@ if (isset($this->dados['lista_em_abertas'])) {
         </tbody>
         <tfoot>
           <tr>
-            <th>#</th>
+          <th>#</th>
             <th>Nome</th>
-            <th>Valor</th>
-            <th>Staus</th>
-            <!-- <th>Id Tipo</th> -->
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Data - Hora</th>
+            <!--<th></th>-->
             <!-- <th>Id_user</th> -->
           </tr>
         </tfoot>
@@ -88,14 +92,15 @@ if (isset($this->dados['lista_em_abertas'])) {
   </div>
 </div>
 
+<!--Antonio que não sabe php-->
 
+<!-- <pre>
 
 <?php
-
-print_r($lista_em_abertas)
+//  print_r($lista_em_abertas)
 ?>
 
-</pre>
+</pre> -->
 
 <!-- partial -->
 
