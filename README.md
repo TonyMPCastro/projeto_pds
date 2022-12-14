@@ -19,10 +19,10 @@ class Conn
 {
     
     private string $db = "mysql";
-    private string $host = "localhost";
-    private string $user = "root";
-    private string $pass = "";
-    private string $dbname = "edukar_gestao";
+    private string $host = "localhost";//Host de acesso
+    private string $user = "root";//usuario de acesso
+    private string $pass = "";//Senha de acesso
+    private string $dbname = "edukar_gestao"; //nome do banco
     public object $connect;
 
 
