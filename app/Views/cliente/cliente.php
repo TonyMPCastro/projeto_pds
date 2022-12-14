@@ -17,6 +17,11 @@ $table = 3;
 //include "app/Views/menu_footer/menu.php"; 
 // Incluir para chamada de 
 require_once("app/Views/menu_footer/menu.php");
+require_once("app/Lib/Mask.php");
+use app\Lib\Mask;
+
+
+//Mask::setmask('98984320228', '(##)#####-####');
 ?>
 
 <!--Antonio que não sabe php -->
@@ -65,7 +70,7 @@ require_once("app/Views/menu_footer/menu.php");
                 </td>
                 <td><?= $lista_em_abertas_1->nome_user; ?></td>
                 <td><?= $lista_em_abertas_1->email ?></td>
-                <td><?= $lista_em_abertas_1->telefone  ?></td>
+                <td><?= Mask::setmask($lista_em_abertas_1->telefone, '(##) #####-####'); ?></td>
                 <td><?= $lista_em_abertas_1->dia.' - '.$lista_em_abertas_1->horario  ?></td>
               </tr>
           <?php  }
