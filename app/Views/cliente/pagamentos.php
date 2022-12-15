@@ -98,18 +98,4 @@ require_once("app/Views/menu_footer/menu.php");
   </div>
 </div>
 
-<!--Antonio que não sabe php-->
-
-
-<!-- <pre>
-
-<?php
-  //print_r($lista_pagamento)
-?>
-
-</pre> -->
-
-<!-- partial -->
-
-
 <?php include "app/Views/menu_footer/footer.php"; ?>
