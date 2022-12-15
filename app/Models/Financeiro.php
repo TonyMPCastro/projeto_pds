@@ -45,7 +45,7 @@ class Financeiro extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val_login = "SELECT * FROM forma_pagamentos";
+            $query_val_login = "SELECT * FROM forma_pagamento";
             $result_val_login = $this->conn->prepare($query_val_login);
             $result_val_login->execute();
             $this->resultadoBd = json_decode(json_encode($result_val_login->fetchAll()), FALSE);

@@ -19,12 +19,12 @@ class Financeiro
         $this->dados['tipo_user_id'] = $_SESSION['tipo_user_id'];
         $this->dados['menu'] = $visualizarLogin->menu_adm($this->dados);
         $this->dados['dividas'] = $cliente->get_dividas($this->dados);
-        $carregarView = new \Core\ConfigView("Views/cliente/divida", $this->dados);
+        $carregarView = new \Core\ConfigView("Views/cliente/dividas", $this->dados);
         $carregarView->renderizar();
     }
 
 
-    public function formaPag()
+    public function formaPagamento()
     {
         $cliente = new \App\Models\Financeiro();
         $visualizarLogin = new \App\Models\AdmsUser();

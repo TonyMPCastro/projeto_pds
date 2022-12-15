@@ -8,19 +8,19 @@ if (isset($this->dados['menu'])) {
     $menu = $this->dados['menu'];
 }
 
-if (isset($this->dados['lista_em_abertas'])) {
-    $lista_em_abertas = $this->dados['lista_em_abertas'];
+if (isset($this->dados['forma_pagamento'])) {
+    $lista_pagamento = $this->dados['forma_pagamento'];
 }else{
-  $lista_em_abertas = [];
+  $lista_de_pagamento = [];
 }
-$table = 3;
+$table = 5;
 ?>
 <?php 
 //include "app/Views/menu_footer/menu.php"; 
 // Incluir para chamada de 
 require_once("app/Views/menu_footer/menu.php");
-require_once("app/Lib/Mask.php");
-use app\Lib\Mask;
+// require_once("app/Lib/Mask.php");
+// use app\Lib\Mask;
 
 
 //Mask::setmask('98984320228', '(##)#####-####');
@@ -32,13 +32,13 @@ use app\Lib\Mask;
   <div class="content-wrapper">
     <a href="<?php echo URL . 'home/onShow' ?>" class="menu-link" title="Home"><i class="mdi mdi-home"></i></a>
     >
-    <a href="<?php echo URL . 'servico_adm/index' ?>" class="menu-link"><span>LISTAGEM DE HORÁRIOS</span></a>
+    <a href="<?php echo URL . 'servico_adm/index' ?>" class="menu-link"><span>LISTAGEM DE PAGAMENTOS</span></a>
 
     <br>
     <br>
     <div class="">
       <div class="card-header">
-        <strong>HORÁRIOS</strong>
+        <strong>Listagem de Pagamentos</strong>
       </div>
       <br>
       <div class="text-center">
@@ -48,21 +48,21 @@ use app\Lib\Mask;
       <table id="example<?= $table; ?>" class="display" style="width:100%">
         <thead>
           <tr>
-            <th>#</th>
+          <th>#</th>
             <th>Nome</th>
-            <th>Email</th>
-            <th>Telefone</th>
-            <th>Dia - Hora</th>
-            <!--<th></th>-->
+            <th>Taxa</th>
+            <th>Status</th>
+            <!-- <th></th> -->
+            <!--<th>id	</th>-->
             <!-- <th>Id_user</th> -->
           </tr>
         </thead>
         <tbody>
-          <?php if (count($lista_em_abertas) > 0) {
-            foreach ($lista_em_abertas as $lista_em_abertas_1) { ?>
+          <?php if (count($lista_pagamento) > 0) {
+            foreach ($lista_pagamento as $lista_de_pagamento) { ?>
               <tr>
                 <td style='font-size:28px'>
-                  <a href="<?php echo URL . 'servico_adm/onEdit?id=' . $lista_em_abertas_1->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
+                  <a href="<?php echo URL . 'servico_adm/onEdit?id=' . $lista_de_pagamento->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
                     <i style="color:#0090e7;" class='mdi mdi-account-plus'></i>
                   </a>
                   &nbsp;&nbsp;&nbsp;
@@ -70,10 +70,10 @@ use app\Lib\Mask;
                     <i style="color:red;" class='mdi mdi-delete'></i>
                   </a>
                 </td>
-                <td><?= $lista_em_abertas_1->nome_user; ?></td>
-                <td><?= $lista_em_abertas_1->email ?></td>
-                <td><?= Mask::setmask($lista_em_abertas_1->telefone, '(##) #####-####'); ?></td>
-                <td><?= $lista_em_abertas_1->dia.' - '.$lista_em_abertas_1->horario  ?></td>
+                <td><?= $lista_de_pagamento->nome; ?></td>
+                <td><?= $lista_de_pagamento->taxa; ?></td>
+                <td><?= $lista_de_pagamento->status; ?></td>
+                <!-- <td><//?= $lista_em_abertas_1->dia.' - '.$lista_em_abertas_1->horario  ?></td> -->
               </tr>
           <?php  }
           }
@@ -83,9 +83,8 @@ use app\Lib\Mask;
           <tr>
           <th>#</th>
             <th>Nome</th>
-            <th>Email</th>
-            <th>Telefone</th>
-            <th>Data - Hora</th>
+            <th>Taxa</th>
+            <th>Status</th>
             <!--<th></th>-->
             <!-- <th>Id_user</th> -->
           </tr>
@@ -98,6 +97,17 @@ use app\Lib\Mask;
     </div>
   </div>
 </div>
+
+<!--Antonio que não sabe php-->
+
+
+<!-- <pre>
+
+<?php
+  print_r($lista_pagamento)
+?>
+
+</pre> -->
 
 <!-- partial -->
 

@@ -43,7 +43,8 @@ class Permissao
                 "adm",
                 "adm_user",
                 "servico_adm",
-                "cliente"
+                "cliente",
+                "financeiro"
             ];
         }
 
