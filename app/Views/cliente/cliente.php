@@ -97,17 +97,6 @@ use app\Lib\Mask;
   </div>
 </div>
 
-<!--Antonio que não sabe php-->
-
-
-<!-- <pre>
-
-<?php
-//  print_r($lista_em_abertas)
-?>
-
-</pre> -->
-
 <!-- partial -->
 
 

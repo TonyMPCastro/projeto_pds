@@ -33,6 +33,7 @@ class AdmCliente extends Conn
             join semana s on s.id = h.semana_id          
             where m.status = 1
             order by data_hora_cri ASC";
+            
             $result_val_login = $this->conn->prepare($query_val_login);
             $result_val_login->execute();
             $this->resultadoBd = json_decode(json_encode($result_val_login->fetchAll()), FALSE);
