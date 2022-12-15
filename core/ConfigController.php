@@ -79,8 +79,8 @@ class ConfigController
             $classeCarregar->dividas();  
           }
 
-          if($this->urlMetodo == "formaPag"){
-            $classeCarregar->formaPag();  
+          if($this->urlMetodo == "formaPagamento"){
+            $classeCarregar->formaPagamento();  
           }
         
     }
