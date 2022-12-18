@@ -27,7 +27,7 @@ class ConfigController
 
                 if(isset($_SESSION['usuario_id']) AND isset($_SESSION['usuario_nome'])  AND isset($_SESSION['usuario_email']) ){
                     if( $_SESSION['tipo_user_id'] == 2){
-                        $this->urlController = "cliente";
+                        $this->urlController = "home2";
                         $this->urlMetodo = "index";
                     }else{
                         $this->urlController = "home";
@@ -75,13 +75,35 @@ class ConfigController
             $classeCarregar->onDelete();  
           }
 
+          if($this->urlMetodo == "onDelete_d"){
+            $classeCarregar->onDelete_d();  
+          }
+
           if($this->urlMetodo == "dividas"){
             $classeCarregar->dividas();  
           }
 
+          if($this->urlMetodo == "onDividas"){
+            $classeCarregar->onDividas();  
+          }
+          
+          if($this->urlMetodo == "onDividasSave"){
+            $classeCarregar->onDividasSave();  
+          }
+          
           if($this->urlMetodo == "formaPagamento"){
             $classeCarregar->formaPagamento();  
           }
+
+          if($this->urlMetodo == "onFormaPagamento"){
+            $classeCarregar->onFormaPagamento();  
+          }
+
+          if($this->urlMetodo == "onFormaPagamentoSave"){
+            $classeCarregar->onFormaPagamentoSave();  
+          }
+
+          
         
     }
     

@@ -34,10 +34,10 @@ class Login
 
                     if ($_SESSION['tipo_user_id'] == 2) {
 
-                        $urlDestino = URL . "aluno/index";
+                        $urlDestino = URL . "home2/index";
                     } else {
 
-                        $urlDestino = URL . "home/onShow";
+                        $urlDestino = URL . "home/index";
                     }
 
                     header("Location: $urlDestino");

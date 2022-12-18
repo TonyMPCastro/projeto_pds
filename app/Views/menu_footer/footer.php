@@ -95,7 +95,7 @@ if (isset($this->dados['status'])) {
 
   if ($this->dados['status'] == 'd') {
     echo "<script>
-        toastr.success('Deletado com sucesso');
+        toastr.danger('Deletado com sucesso');
       </script>";
   }
 

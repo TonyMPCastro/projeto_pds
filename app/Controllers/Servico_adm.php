@@ -48,7 +48,7 @@ class Servico_adm
 
         $admUser = new \App\Models\AdmsUser();
         $admServico = new \App\Models\AdmServico();
-        $this->dados['id'] = $_GET["id_user"] ? $_GET["id_user"] : null;
+        $this->dados['id'] = $_GET["id"] ? $_GET["id"] : null;
 
         $ret = $admServico->delete_servico($this->dados);
         $this->dados['tipo_user_id'] = $_SESSION['tipo_user_id'];
@@ -71,19 +71,12 @@ class Servico_adm
         $admUser = new \App\Models\AdmsUser();
         $this->dados['tipo_user_id'] = $_SESSION['tipo_user_id'];
         $this->dados['menu'] = $admUser->menu_adm($this->dados);
-        $obj = new stdClass();
-        $obj->nome = null;
-        $obj->valor = null;
-        $obj->status = null;
-        $obj->id = null;
-        $this->dados['servico'] = $obj;
         $carregarView = new \Core\ConfigView("Views/adm/cad_servico", $this->dados);
         $carregarView->renderizar();
     }
 
 
-    public function onSave()
-    {
+    public function onSave(){
         $admServico = new \App\Models\AdmServico();
         $this->dados['id'] = $_POST["id"] ? $_POST["id"] : null;
         $this->dados['nome'] = $_POST["nome"] ? $_POST["nome"] : null;
@@ -93,6 +86,7 @@ class Servico_adm
         if ($this->dados['id']) {
             $ret = $admServico->update_servico($this->dados);
             if ($ret) {
+                $this->Exception = 'a';
             }
         } else {
             $ret = $admServico->salve_servico($this->dados);
