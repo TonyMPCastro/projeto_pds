@@ -63,7 +63,7 @@ require_once("app/Views/menu_footer/menu.php");
             foreach ($lista_pagamento as $lista_de_pagamento) { ?>
               <tr>
                 <td style='font-size:28px'>
-                  <a href="<?php echo URL . 'servico_adm/onEdit?id=' . $lista_de_pagamento->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
+                  <a href="<?php echo URL . 'financeiro/onEdit_f?id=' . $lista_de_pagamento->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
                     <i style="color:#0090e7;" class='mdi mdi-account-plus'></i>
                   </a>
                   <!-- &nbsp;&nbsp;&nbsp;
