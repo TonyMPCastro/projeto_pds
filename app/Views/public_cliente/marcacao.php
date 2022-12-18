@@ -51,7 +51,7 @@ use app\Lib\Mask;
             <th>#</th>
             <th>Serviço</th>
             <th>forma de pagamento</th>
-            <th>Usuario</th>
+            <!-- <th>Usuario</th> -->
             <th>Horario agendado</th>
             <th>Status</th>
             <!-- <th>Id_user</th> -->
@@ -71,10 +71,10 @@ use app\Lib\Mask;
                   </a>
                 </td>
                 <td><?= $marcacao_servico_1->servicos; ?></td>
-                <td><?= $marcacao_servico_1->forma_pagamento_id ?></td>
-                <td><?= $marcacao_servico_1->user_id; ?></td>
+                <td><?= $marcacao_servico_1->nome ?></td>
+                <!-- <td>'<= $marcacao_servico_1->user_id; ?>'</td> -->
                 <td><?= $marcacao_servico_1->horario_agendado ?></td>
-                <td><?= $marcacao_servico_1->status; ?></td>
+                <td><?= $marcacao_servico_1->status == "1"? "ATIVO":"INATIVO";?></td>
               </tr>
           <?php  }
           }
@@ -85,7 +85,7 @@ use app\Lib\Mask;
           <th>#</th>
             <th>Serviço</th>
             <th>forma de pagamento</th>
-            <th>Usuario</th>
+            <!-- <th>Usuario</th> -->
             <th>Horario agendado</th>
             <th>Status</th>
             <!--<th></th>-->
