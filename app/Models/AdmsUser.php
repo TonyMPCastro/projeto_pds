@@ -79,6 +79,29 @@ class AdmsUser extends Conn
     }
 
 
+    public function get_marcacaes_c(array $dados = null)
+    {
+        try {
+            $this->dados = $dados;
+            $this->conn = $this->connect();
+            $query_val_login = "SELECT * FROM marcacao_servico where user_id = :id";
+            $result_val_login = $this->conn->prepare($query_val_login);
+            $result_val_login->bindParam(":id", $_SESSION['usuario_id'], PDO::PARAM_STR);
+            $result_val_login->execute();
+            $this->resultadoBd = json_decode(json_encode($result_val_login->fetchAll()), FALSE);
+            if ($this->resultadoBd) {
+                return $this->resultadoBd;
+            } else {
+                throw new PDOException("Erro: Não foi possível executar a declaração sql");
+                return $this->resultadoBd;
+            }
+        } catch (PDOException $erro) {
+            echo $erro->getMessage();
+        }
+    }
+
+
+
     public function get_user(array $dados = null)
     {
         try {

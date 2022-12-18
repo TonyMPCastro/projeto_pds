@@ -1,21 +1,21 @@
 <?php
 
 if (!defined('4578S9')) {
-    header("Location: /");
-    die("Erro: Página não encontrada!");
+  header("Location: /");
+  die("Erro: Página não encontrada!");
 }
 if (isset($this->dados['menu'])) {
-    $menu = $this->dados['menu'];
+  $menu = $this->dados['menu'];
 }
 
 if (isset($this->dados['forma_pagamento'])) {
-    $lista_pagamento = $this->dados['forma_pagamento'];
-}else{
+  $lista_pagamento = $this->dados['forma_pagamento'];
+} else {
   $lista_de_pagamento = [];
 }
 $table = 5;
 ?>
-<?php 
+<?php
 //include "app/Views/menu_footer/menu.php"; 
 // Incluir para chamada de 
 require_once("app/Views/menu_footer/menu.php");
@@ -32,7 +32,7 @@ require_once("app/Views/menu_footer/menu.php");
   <div class="content-wrapper">
     <a href="<?php echo URL . 'home/onShow' ?>" class="menu-link" title="Home"><i class="mdi mdi-home"></i></a>
     >
-    <a href="<?php echo URL . 'servico_adm/index' ?>" class="menu-link"><span>LISTAGEM DE PAGAMENTOS</span></a>
+    <a href="<?php echo URL . 'financeiro/index' ?>" class="menu-link"><span>LISTAGEM DE PAGAMENTOS</span></a>
 
     <br>
     <br>
@@ -42,13 +42,13 @@ require_once("app/Views/menu_footer/menu.php");
       </div>
       <br>
       <div class="text-center">
-        <a href="<?php echo URL . 'servico_adm/onShow' ?>" class="btn btn-outline-success btn-lg">CADASTRAR</a>
+        <a href="<?php echo URL . 'financeiro/onFormaPagamento' ?>" class="btn btn-outline-success btn-lg">CADASTRAR</a>
       </div>
       <br>
       <table id="example<?= $table; ?>" class="display" style="width:100%">
         <thead>
           <tr>
-          <th>#</th>
+            <th>#</th>
             <th>Nome</th>
             <th>Taxa</th>
             <th>Status</th>
@@ -81,7 +81,7 @@ require_once("app/Views/menu_footer/menu.php");
         </tbody>
         <tfoot>
           <tr>
-          <th>#</th>
+            <th>#</th>
             <th>Nome</th>
             <th>Taxa</th>
             <th>Status</th>

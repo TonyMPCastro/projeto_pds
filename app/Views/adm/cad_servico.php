@@ -8,6 +8,8 @@ if (!defined('4578S9')) {
 
 if (isset($this->dados['servico'])) {
   $servico = $this->dados['servico'];
+}else{
+  $servico = null;
 }
 
 ?>
@@ -38,7 +40,7 @@ if (isset($this->dados['servico'])) {
               <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-12 text-left control-label col-form-label">Nome: <span style="color: red;" data-uw-styling-context="true">*</span></label>
                 <div class="col-sm-12 input-group has-validation">
-                  <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $servico->nome; ?>" placeholder="Nome do serviço" required>
+                  <input type="text" class="form-control" id="nome" name="nome" value="<?php echo isset($servico->nome)?$servico->nome:""; ?>" placeholder="Nome do serviço" required>
                   <div class="invalid-feedback">
                     Digite o Nome do Serviço
                   </div>
@@ -49,7 +51,7 @@ if (isset($this->dados['servico'])) {
               <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-4 text-left control-label col-form-label">Valor: <span style="color: red;" data-uw-styling-context="true">*</span></label>
                 <div class="col-sm-12 input-group has-validation">
-                  <input type="number" min="0" step="0.01" class="form-control" id="valor" name="valor" value="<?php echo $servico->valor; ?>" placeholder="Valor" required>
+                  <input type="number" min="0" step="0.01" class="form-control" id="valor" name="valor" value="<?php echo isset($servico->valor)?$servico->valor:""; ?>" placeholder="Valor" required>
                   <div class="invalid-feedback">
                     Digite seu Telefone
                   </div>
@@ -66,24 +68,21 @@ if (isset($this->dados['servico'])) {
                 <div class="col-sm-12  has-validation">
 
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" id="status" name="status" value="1" required <?php echo ($servico->status == 1)?'checked':'';?>>
+                    <input class="form-check-input" type="radio" id="status" name="status" value="1" required <?php echo isset($servico->status)?(($servico->status == 1) ?'checked':''): "";?>>
                     <label class="form-check-label" for="DESATIVADO">
                       DESATIVADO
                     </label>
                   </div>
 
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" id="status" name="status" value="2" required <?php echo ($servico->status == 2)?'checked':'';?>>
+                    <input class="form-check-input" type="radio" id="status" name="status" value="2" required <?php echo isset($servico->status)?(($servico->status == 2) ?'checked':''): "";?>>
                     <label class="form-check-label" for="ATIVADO">
                       ATIVADO
                     </label>
                   </div>
 
-                  <div class="invalid-feedback">
-                    Digite se nome.
-                  </div>
-
-                  <input type="hidden" class="form-control" id="id" name="id" value="<?php //e?>">
+                
+                  <input type="hidden" class="form-control" id="id" name="id" value="<?php echo isset($servico->id)?$servico->id: "";?>">
 
                 </div>
               </div>
@@ -91,7 +90,7 @@ if (isset($this->dados['servico'])) {
           </div>
 
           <div class="card-footer text-center">
-            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <button type="submit" class="btn btn-primary mr-2">SALVAR</button>
           </div>
       </form>
 

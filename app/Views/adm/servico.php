@@ -14,17 +14,18 @@ if (isset($this->dados['servicos'])) {
 $table = 2;
 ?>
 
-<?php 
+<?php
 
 require_once("app/Views/menu_footer/menu.php");
 
 require_once("app/Lib/Mask.php");
+
 use app\Lib\Mask;
 
 
 //Mask::setmask('98984320228', '(##)#####-####');
 
- ?>
+?>
 
 
 <!-- partial -->
@@ -59,20 +60,36 @@ use app\Lib\Mask;
         <tbody>
           <?php if ($servicos) {
             foreach ($servicos as $servico) { ?>
-              <tr>
-                <td style='font-size:28px'>
+              <tr class="tt">
+                <td class="ttt" style='font-size:28px'>
                   <a href="<?php echo URL . 'servico_adm/onEdit?id=' . $servico->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
                     <i style="color:#0090e7;" class='mdi mdi-account-plus'></i>
                   </a>
                   &nbsp;&nbsp;&nbsp;
-                  <a href="#" title="Apagar" data-toggle="modal" data-target="#confirm">
+                  <button style="border: none;" value="" title="Apagar" id="delete" data-toggle="modal" data-target="#confirm<?= $servico->nome; ?>">
                     <i style="color:red;" class='mdi mdi-delete'></i>
-                  </a>
+                  </button>
                 </td>
                 <td><?= $servico->nome; ?></td>
                 <td><?= $servico->valor; ?></td>
                 <td><?= ($servico->status == 2) ? "Ativo" : "Desativado"; ?></td>
               </tr>
+
+              <div class="modal fade" id="confirm<?= $servico->nome; ?>" role="dialog">
+                <div class="modal-dialog modal-md">
+
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <p> DESEJA REALMENTE FAZER ISSO?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="<?php echo URL . 'servico_adm/onDelete?id_user=' . $servico->id; ?>" type="button" class="btn btn-danger" id="delete_conf">Apagar Registo</a>
+                      <button type="button" data-dismiss="modal" class="btn btn-warning">Cancelar</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
           <?php  }
           }
           ?>
@@ -96,25 +113,6 @@ use app\Lib\Mask;
   </div>
 </div>
 
-
-<div class="modal fade" id="confirm" role="dialog">
-  <div class="modal-dialog modal-md">
-
-    <div class="modal-content">
-      <div class="modal-body">
-        <p> DESEJA REALMENTE FAZER ISSO?</p>
-      </div>
-      <div class="modal-footer">
-        <a href="<?php echo URL . 'servico_adm/onDelete?id_user=' . $servico->id; ?>" type="button" class="btn btn-danger" id="delete">Apagar Registo</a>
-        <button type="button" data-dismiss="modal" class="btn btn-warning">Cancelar</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-<?php
-
-require_once("app/Views/menu_footer/footer.php");
-?>
+  <?php
+  require_once("app/Views/menu_footer/footer.php");
+  ?>

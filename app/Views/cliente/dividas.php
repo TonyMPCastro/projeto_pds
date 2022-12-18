@@ -1,21 +1,23 @@
 <?php
 
 if (!defined('4578S9')) {
-    header("Location: /");
-    die("Erro: Página não encontrada!");
+  header("Location: /");
+  die("Erro: Página não encontrada!");
 }
 if (isset($this->dados['menu'])) {
-    $menu = $this->dados['menu'];
+  $menu = $this->dados['menu'];
 }
 
 if (isset($this->dados['dividas'])) {
-    $lista_dividas = $this->dados['dividas'];
-}else{
-    $lista_dividas = [];
+  $lista_dividas = $this->dados['dividas'];
+} else {
+  $lista_dividas = [];
 }
+
 $table = 4;
+
 ?>
-<?php 
+<?php
 //include "app/Views/menu_footer/menu.php"; 
 // Incluir para chamada de 
 require_once("app/Views/menu_footer/menu.php");
@@ -32,7 +34,7 @@ require_once("app/Views/menu_footer/menu.php");
   <div class="content-wrapper">
     <a href="<?php echo URL . 'home/onShow' ?>" class="menu-link" title="Home"><i class="mdi mdi-home"></i></a>
     >
-    <a href="<?php echo URL . 'servico_adm/index' ?>" class="menu-link"><span>LISTAGEM DE DESPESAS</span></a>
+    <a href="<?php echo URL . 'financeiro/dividas' ?>" class="menu-link"><span>LISTAGEM DE DESPESAS</span></a>
 
     <br>
     <br>
@@ -42,19 +44,16 @@ require_once("app/Views/menu_footer/menu.php");
       </div>
       <br>
       <div class="text-center">
-        <a href="<?php echo URL . 'servico_adm/onShow' ?>" class="btn btn-outline-success btn-lg">CADASTRAR</a>
+        <a href="<?php echo URL . 'financeiro/onDividas' ?>" class="btn btn-outline-success btn-lg">CADASTRAR</a>
       </div>
       <br>
       <table id="example<?= $table; ?>" class="display" style="width:100%">
         <thead>
           <tr>
             <th>#</th>
-            <th>Data</th>
-            <th>Valor</th>
             <th>Descrição</th>
-            <!-- <th></th> -->
-            <!--<th>id	</th>-->
-            <!-- <th>Id_user</th> -->
+            <th>Valor</th>
+            <th>Data</th>
           </tr>
         </thead>
         <tbody>
@@ -70,10 +69,9 @@ require_once("app/Views/menu_footer/menu.php");
                     <i style="color:red;" class='mdi mdi-delete'></i>
                   </a>
                 </td>
-                <td><?= $lista_de_dividas->data_gasto; ?></td>
-                <td><?= $lista_de_dividas->valor ?></td>
                 <td><?= $lista_de_dividas->descricao; ?></td>
-                <!-- <td><//?= $lista_em_abertas_1->dia.' - '.$lista_em_abertas_1->horario  ?></td> -->
+                <td><?= $lista_de_dividas->valor ?></td>
+                <td><?= date("d/m/Y", strtotime($lista_de_dividas->data_gasto)); ?></td>
               </tr>
           <?php  }
           }
@@ -81,12 +79,10 @@ require_once("app/Views/menu_footer/menu.php");
         </tbody>
         <tfoot>
           <tr>
-          <th>#</th>
-            <th>Data</th>
-            <th>Valor</th>
+            <th>#</th>
             <th>Descrição</th>
-            <!--<th></th>-->
-            <!-- <th>Id_user</th> -->
+            <th>Valor</th>
+            <th>Data</th>
           </tr>
         </tfoot>
       </table>
@@ -98,18 +94,21 @@ require_once("app/Views/menu_footer/menu.php");
   </div>
 </div>
 
-<!--Antonio que não sabe php-->
 
+<div class="modal fade" id="confirm" role="dialog">
+  <div class="modal-dialog modal-md">
 
-<!-- <pre>
+    <div class="modal-content">
+      <div class="modal-body">
+        <p> DESEJA REALMENTE FAZER ISSO?</p>
+      </div>
+      <div class="modal-footer">
+        <a href="<?php echo URL . 'financeiro/onDelete_d?id=' . $servico->id; ?>" type="button" class="btn btn-danger" id="delete">Apagar Registo</a>
+        <button type="button" data-dismiss="modal" class="btn btn-warning">Cancelar</button>
+      </div>
+    </div>
 
-<?php
-  print_r($lista_dividas)
-?>
-
-</pre> -->
-
-<!-- partial -->
-
+  </div>
+</div>
 
 <?php include "app/Views/menu_footer/footer.php"; ?>

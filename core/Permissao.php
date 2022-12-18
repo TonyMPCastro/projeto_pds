@@ -34,7 +34,7 @@ class Permissao
 
         if( $_SESSION['tipo_user_id'] == 2){
 
-            $this->pgRestrita = [""];
+            $this->pgRestrita = ["home2"];
         }else{
 
             $this->pgRestrita = [
