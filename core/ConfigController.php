@@ -71,6 +71,10 @@ class ConfigController
             $classeCarregar->onEdit();  
           }
 
+          if($this->urlMetodo == "onEdit_d"){
+            $classeCarregar->onEdit_d();  
+          }
+
           if($this->urlMetodo == "onDelete"){
             $classeCarregar->onDelete();  
           }

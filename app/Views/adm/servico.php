@@ -71,7 +71,7 @@ use app\Lib\Mask;
                   </a> -->
                 </td>
                 <td><?= $servico->nome; ?></td>
-                <td><?= $servico->valor; ?></td>
+                <td><?= number_format($servico->valor,2,",","."); ?></td>
                 <td><?= ($servico->status == 2) ? "Ativo" : "Desativado"; ?></td>
               </tr>
 

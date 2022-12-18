@@ -24,10 +24,10 @@ class AdmServico extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val_login = "SELECT * FROM servico";
-            $result_val_login = $this->conn->prepare($query_val_login);
-            $result_val_login->execute();
-            $this->resultadoBd = json_decode(json_encode($result_val_login->fetchAll()), FALSE);
+            $query_val = "SELECT * FROM servico";
+            $result_val = $this->conn->prepare($query_val);
+            $result_val->execute();
+            $this->resultadoBd = json_decode(json_encode($result_val->fetchAll()), FALSE);
             if ($this->resultadoBd) {
                 return $this->resultadoBd;
             } else {
@@ -45,11 +45,11 @@ class AdmServico extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val_login = "SELECT * FROM servico WHERE id = :id";
-            $result_val_login = $this->conn->prepare($query_val_login);
-            $result_val_login->bindParam(":id", $this->dados['id'], PDO::PARAM_STR);
-            $result_val_login->execute();
-            $this->resultadoBd = json_decode(json_encode($result_val_login->fetch()), FALSE);
+            $query_val = "SELECT * FROM servico WHERE id = :id";
+            $result_val = $this->conn->prepare($query_val);
+            $result_val->bindParam(":id", $this->dados['id'], PDO::PARAM_STR);
+            $result_val->execute();
+            $this->resultadoBd = json_decode(json_encode($result_val->fetch()), FALSE);
             if ($this->resultadoBd) {
                 return $this->resultadoBd;
             } else {
@@ -67,10 +67,10 @@ class AdmServico extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val_login = "DELETE FROM servico WHERE id = :id";
-            $result_val_login = $this->conn->prepare($query_val_login);
-            $result_val_login->bindParam(":id", $this->dados['id'], PDO::PARAM_STR);
-            if ($result_val_login->execute()) {
+            $query_val = "DELETE FROM servico WHERE id = :id";
+            $result_val = $this->conn->prepare($query_val);
+            $result_val->bindParam(":id", $this->dados['id'], PDO::PARAM_STR);
+            if ($result_val->execute()) {
                 $this->resultadoBd[0] = "Log Delete Servico";
                 $this->resultadoBd["id_servico"] = $this->dados['id'];
                 $this->log(json_encode($this->resultadoBd, true));
@@ -90,12 +90,12 @@ class AdmServico extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val_login = "INSERT INTO servico (nome, valor, status) VALUES (:nome, :valor, :st)";
-            $result_val_login = $this->conn->prepare($query_val_login);
-            $result_val_login->bindParam(":nome", $this->dados['nome'], PDO::PARAM_STR);
-            $result_val_login->bindParam(":valor", $this->dados['valor'], PDO::PARAM_STR);
-            $result_val_login->bindParam(":st", $this->dados['status'], PDO::PARAM_STR);
-            if ($result_val_login->execute()) {
+            $query_val = "INSERT INTO servico (nome, valor, status) VALUES (:nome, :valor, :st)";
+            $result_val = $this->conn->prepare($query_val);
+            $result_val->bindParam(":nome", $this->dados['nome'], PDO::PARAM_STR);
+            $result_val->bindParam(":valor", $this->dados['valor'], PDO::PARAM_STR);
+            $result_val->bindParam(":st", $this->dados['status'], PDO::PARAM_STR);
+            if ($result_val->execute()) {
                 $this->resultadoBd[0] = "Log Insert Servico";
                 $this->resultadoBd["id_servico"] = $this->dados;
                 $this->log(json_encode($this->resultadoBd, true));
@@ -115,13 +115,13 @@ class AdmServico extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val_login = "UPDATE servico SET nome = :nome,valor = :valor, status = :st WHERE id = :id";
-            $result_val_login = $this->conn->prepare($query_val_login);
-            $result_val_login->bindParam(":id", $this->dados['id'], PDO::PARAM_STR);
-            $result_val_login->bindParam(":nome", $this->dados['nome'], PDO::PARAM_STR);
-            $result_val_login->bindParam(":valor", $this->dados['valor'], PDO::PARAM_STR);
-            $result_val_login->bindParam(":st", $this->dados['status'], PDO::PARAM_STR);
-            if ($result_val_login->execute()) {
+            $query_val = "UPDATE servico SET nome = :nome,valor = :valor, status = :st WHERE id = :id";
+            $result_val = $this->conn->prepare($query_val);
+            $result_val->bindParam(":id", $this->dados['id'], PDO::PARAM_STR);
+            $result_val->bindParam(":nome", $this->dados['nome'], PDO::PARAM_STR);
+            $result_val->bindParam(":valor", $this->dados['valor'], PDO::PARAM_STR);
+            $result_val->bindParam(":st", $this->dados['status'], PDO::PARAM_STR);
+            if ($result_val->execute()) {
                 $this->resultadoBd[0] = "Log Update Servico";
                 $this->resultadoBd["id_servico"] = $this->dados['id'];
                 $this->log(json_encode($this->resultadoBd, true));

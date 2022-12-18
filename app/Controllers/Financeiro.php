@@ -5,6 +5,8 @@ namespace App\Controllers;
 class Financeiro{
 
     private $dados;
+    private $Exception = false;
+
     
     function __construct(){
         $verificarLogin = new \App\Lib\Adm();
@@ -17,6 +19,7 @@ class Financeiro{
         $this->dados['tipo_user_id'] = $_SESSION['tipo_user_id'];
         $this->dados['menu'] = $visualizarLogin->menu_adm($this->dados);
         $this->dados['dividas'] = $cliente->get_dividas($this->dados);
+        $this->dados['status'] = ($this->Exception) ? $this->Exception : '';
         $carregarView = new \Core\ConfigView("Views/cliente/dividas", $this->dados);
         $carregarView->renderizar();
     }
@@ -28,6 +31,7 @@ class Financeiro{
         $this->dados['tipo_user_id'] = $_SESSION['tipo_user_id'];
         $this->dados['menu'] = $visualizarLogin->menu_adm($this->dados);
         $this->dados['forma_pagamento'] = $cliente->get_form_pag($this->dados);
+        $this->dados['status'] = ($this->Exception) ? $this->Exception : '';
         $carregarView = new \Core\ConfigView("Views/cliente/pagamentos", $this->dados);
         $carregarView->renderizar();
     }
@@ -73,6 +77,7 @@ class Financeiro{
 
     public function onDividasSave(){ //Metodo para salvar as Dividas
         $financeiro = new \App\Models\Financeiro();
+
         $this->dados['id'] = $_POST["id"] ? $_POST["id"] : null;
         $this->dados['descricao'] = $_POST["descricao"] ? $_POST["descricao"] : null;
         $this->dados['valor'] = $_POST["valor"] ? $_POST["valor"] : null;
@@ -81,45 +86,53 @@ class Financeiro{
         $this->dados['data_hora_at'] = date("Y-m-d H:i:s");
         $this->dados['user_id'] = $_SESSION['usuario_id'];
 
-        if ($this->dados['id']) {
+        if (isset($this->dados['id'])) {
 
             $ret = $financeiro->update_dividas($this->dados);
 
             if ($ret) {
                 $this->Exception = 'a';
+            }else{
+                $this->Exception = 'a_n';
             }
 
         } else {
+
             $ret = $financeiro->salve_dividas($this->dados);
             if ($ret) {
                 $this->Exception = 's';
+            }else{
+                $this->Exception = 's_n';
             }
         }
         
         $this->dividas();
     }
 
-    public function onDelete_d()
-    {
-
+    public function onEdit_d(){
         $admUser = new \App\Models\AdmsUser();
-        $admServico = new \App\Models\AdmServico();
-        $this->dados['id'] = $_GET["id"] ? $_GET["id"] : null;
-
-        $ret = $admServico->delete_servico($this->dados);
+        $financeiro = new \App\Models\Financeiro();
         $this->dados['tipo_user_id'] = $_SESSION['tipo_user_id'];
         $this->dados['menu'] = $admUser->menu_adm($this->dados);
-        $this->dados['servicos'] = $admServico->get_servicos($this->dados);
+        $this->dados['id'] = $_GET["id"] ? $_GET["id"] : null;
+        $this->dados['dividas'] = $financeiro->get_divida($this->dados);
 
-        if ($ret) {
-            $this->dados['status'] = 'd';
+        $carregarView = new \Core\ConfigView("Views/cliente/cad_dividas", $this->dados);
+        $carregarView->renderizar();
+    }
+
+    public function onDelete_d(){
+
+        $financeiro = new \App\Models\Financeiro();
+        $this->dados['id'] = $_GET["id"] ? $_GET["id"] : null;
+
+        if ($financeiro->delete_divida($this->dados)) {
+            $this->Exception = 'd';
         } else {
-            $this->dados['status'] = 'd_n';
+            $this->Exception = 'd_n';
         }
 
-
-        $carregarView = new \Core\ConfigView("Views/adm/servico", $this->dados);
-        $carregarView->renderizar();
+        $this->dividas();
     }
 
 

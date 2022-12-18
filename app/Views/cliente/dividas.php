@@ -61,7 +61,7 @@ require_once("app/Views/menu_footer/menu.php");
             foreach ($lista_dividas as $lista_de_dividas) { ?>
               <tr>
                 <td style='font-size:28px'>
-                  <a href="<?php echo URL . 'servico_adm/onEdit?id=' . $lista_de_dividas->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
+                  <a href="<?php echo URL . 'financeiro/onEdit_d?id=' . $lista_de_dividas->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
                     <i style="color:#0090e7;" class='mdi mdi-account-plus'></i>
                   </a>
                   &nbsp;&nbsp;&nbsp;
@@ -70,7 +70,7 @@ require_once("app/Views/menu_footer/menu.php");
                   </a>
                 </td>
                 <td><?= $lista_de_dividas->descricao; ?></td>
-                <td><?= $lista_de_dividas->valor ?></td>
+                <td><?= number_format($lista_de_dividas->valor,2,",","."); ?></td>
                 <td><?= date("d/m/Y", strtotime($lista_de_dividas->data_gasto)); ?></td>
               </tr>
 

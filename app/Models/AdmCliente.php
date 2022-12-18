@@ -24,7 +24,7 @@ class AdmCliente extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val_login = "SELECT m.id,m.user_id,
+            $query_val = "SELECT m.id,m.user_id,
             u.nome_user,u.email,u.telefone,m.data_hora_cri,
             s.dia,h.horario            
             FROM marcacao_servico m
@@ -34,9 +34,9 @@ class AdmCliente extends Conn
             where m.status = 1
             order by data_hora_cri ASC";
             
-            $result_val_login = $this->conn->prepare($query_val_login);
-            $result_val_login->execute();
-            $this->resultadoBd = json_decode(json_encode($result_val_login->fetchAll()), FALSE);
+            $result_val = $this->conn->prepare($query_val);
+            $result_val->execute();
+            $this->resultadoBd = json_decode(json_encode($result_val->fetchAll()), FALSE);
             if ($this->resultadoBd) {
                 return $this->resultadoBd;
             } else {
