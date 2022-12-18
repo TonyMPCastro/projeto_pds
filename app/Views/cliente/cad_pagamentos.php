@@ -39,9 +39,7 @@ if (isset($this->dados['servico'])) {
                 <label for="inputEmail3" class="col-sm-12 text-left control-label col-form-label">Descrição: <span style="color: red;" data-uw-styling-context="true">*</span></label>
                 <div class="col-sm-12 input-group has-validation">
                   <input type="text" class="form-control" id="descricao" name="descricao" value="<?php echo isset($servico->descricao) ? $servico->descricao : ""; ?>" placeholder="Descrição do Serviço" required>
-                  <div class="invalid-feedback">
-                    Digite o Nome do Serviço
-                  </div>
+                 
                 </div>
               </div>
             </div>
@@ -51,9 +49,7 @@ if (isset($this->dados['servico'])) {
                 <label for="inputEmail3" class="col-sm-12 text-left control-label col-form-label">Valor: <span style="color: red;" data-uw-styling-context="true">*</span></label>
                 <div class="col-sm-12 input-group has-validation">
                   <input type="number" min="0" step="0.01" class="form-control" id="valor" name="valor" value="<?php echo isset($servico->valor) ? $servico->valor : ""; ?>" placeholder="Valor" required>
-                  <div class="invalid-feedback">
-                    Digite o Valor
-                  </div>
+                 
                 </div>
               </div>
             </div>
@@ -63,9 +59,7 @@ if (isset($this->dados['servico'])) {
                 <label for="inputEmail3" class="col-sm-12 text-left control-label col-form-label">Data: <span style="color: red;" data-uw-styling-context="true">*</span></label>
                 <div class="col-sm-12 input-group has-validation">
                   <input type="date" class="form-control" id="date" name="data_gasto" value="<?php echo isset($servico->descricao) ? $servico->data : ""; ?>" placeholder="" required>
-                  <div class="invalid-feedback">
-                    Digite a Data do gasto
-                  </div>
+                 
                 </div>
               </div>
             </div>
