@@ -24,7 +24,7 @@ class AdmCliente extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val = "SELECT m.id,m.user_id,
+            $query_val = "SELECT m.id,m.servicos,m.user_id,
             u.nome_user,u.email,u.telefone,m.data_hora_cri,
             s.dia,h.horario            
             FROM marcacao_servico m

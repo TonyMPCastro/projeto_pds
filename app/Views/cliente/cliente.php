@@ -13,6 +13,13 @@ if (isset($this->dados['lista_em_abertas'])) {
 }else{
   $lista_em_abertas = [];
 }
+
+if (isset($this->dados['servicos'])) {
+  $servicos = $this->dados['servicos'];
+}else{
+$servicos = [];
+}
+
 $table = 3;
 ?>
 <?php 
@@ -50,6 +57,7 @@ use app\Lib\Mask;
           <tr>
             <th>#</th>
             <th>Nome</th>
+            <th>Procedimentos</th>
             <th>Email</th>
             <th>Telefone</th>
             <th>Dia - Hora</th>
@@ -59,18 +67,33 @@ use app\Lib\Mask;
         </thead>
         <tbody>
           <?php if (count($lista_em_abertas) > 0) {
-            foreach ($lista_em_abertas as $lista_em_abertas_1) { ?>
+            foreach ($lista_em_abertas as $lista_em_abertas_1) { 
+              $arr = explode(";",$lista_em_abertas_1->servicos);
+              $str_serv = "";
+              $total = 0;
+              foreach ($arr as $value) {
+                foreach($servicos as $ser){
+                    if($value == $ser->id){
+                      $str_serv .= $ser->nome. " - ".number_format($ser->valor,2,",",".")."<br>";
+                      $total += $ser->valor;
+                    }
+                  }
+              }
+
+              $str_serv .= "<b>Total = ".number_format($total,2,",",".")."<b>";
+              ?>
               <tr>
                 <td style='font-size:28px'>
                   <a href="<?php echo URL . 'servico_adm/onEdit?id=' . $lista_em_abertas_1->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
-                    <i style="color:#0090e7;" class='mdi mdi-account-plus'></i>
+                    <i style="color:#0090e7;" class='mdi mdi-table-edit'></i>
                   </a>
-                  &nbsp;&nbsp;&nbsp;
+                  <!-- &nbsp;&nbsp;&nbsp;
                   <a href="#" title="Apagar" data-toggle="modal" data-target="#confirm">
                     <i style="color:red;" class='mdi mdi-delete'></i>
-                  </a>
+                  </a> -->
                 </td>
                 <td><?= $lista_em_abertas_1->nome_user; ?></td>
+                <td><?= $str_serv ?></td>
                 <td><?= $lista_em_abertas_1->email ?></td>
                 <td><?= Mask::setmask($lista_em_abertas_1->telefone, '(##) #####-####'); ?></td>
                 <td><?= $lista_em_abertas_1->dia.' - '.$lista_em_abertas_1->horario  ?></td>
@@ -83,6 +106,7 @@ use app\Lib\Mask;
           <tr>
           <th>#</th>
             <th>Nome</th>
+            <th>Procedimentos</th>
             <th>Email</th>
             <th>Telefone</th>
             <th>Data - Hora</th>

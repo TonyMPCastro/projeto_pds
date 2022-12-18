@@ -63,7 +63,7 @@ use app\Lib\Mask;
               <tr class="tt">
                 <td class="ttt" style='font-size:28px'>
                   <a href="<?php echo URL . 'servico_adm/onEdit?id=' . $servico->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
-                    <i style="color:#0090e7;" class='mdi mdi-account-plus'></i>
+                    <i style="color:#0090e7;" class='mdi mdi-table-edit'></i>
                   </a>
                   <!-- &nbsp;&nbsp;&nbsp;
                   <a title="Apagar" id="delete" data-toggle="modal" data-target="#confirm<?= $servico->nome; ?>">

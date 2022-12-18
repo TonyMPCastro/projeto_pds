@@ -64,7 +64,7 @@ require_once("app/Views/menu_footer/menu.php");
               <tr>
                 <td style='font-size:28px'>
                   <a href="<?php echo URL . 'financeiro/onEdit_f?id=' . $lista_de_pagamento->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
-                    <i style="color:#0090e7;" class='mdi mdi-account-plus'></i>
+                    <i style="color:#0090e7;" class='mdi mdi-table-edit'></i>
                   </a>
                   <!-- &nbsp;&nbsp;&nbsp;
                   <a href="#" title="Apagar" data-toggle="modal" data-target="#confirm">

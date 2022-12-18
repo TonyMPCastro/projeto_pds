@@ -84,8 +84,14 @@ class AdmsUser extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val = "SELECT * FROM marcacao_servico m
-            join forma_pagamento f on f.id = m.forma_pagamento_id  where m.user_id = :id";
+            $query_val = "SELECT m.id, m.servicos, m.forma_pagamento_id, m.horarios_id, m.user_id, 
+            m.horario_agendado, m.data_hora_at, m.data_hora_cri, m.status,
+            f.nome,h.horario,s.dia
+            FROM marcacao_servico m
+            join forma_pagamento f on f.id =  m.forma_pagamento_id 
+            join horarios h on h.id = m.horarios_id 
+            join semana s on s.id = h.semana_id 
+             where m.user_id = :id";
             $result_val = $this->conn->prepare($query_val);
             $result_val->bindParam(":id", $_SESSION['usuario_id'], PDO::PARAM_STR);
             $result_val->execute();
