@@ -51,6 +51,7 @@ require_once("app/Views/menu_footer/menu.php");
             <th>#</th>
             <th>Nome</th>
             <th>Taxa</th>
+            <th>Tipo Taxa</th>
             <th>Status</th>
             <!-- <th></th> -->
             <!--<th>id	</th>-->
@@ -65,14 +66,15 @@ require_once("app/Views/menu_footer/menu.php");
                   <a href="<?php echo URL . 'servico_adm/onEdit?id=' . $lista_de_pagamento->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
                     <i style="color:#0090e7;" class='mdi mdi-account-plus'></i>
                   </a>
-                  &nbsp;&nbsp;&nbsp;
+                  <!-- &nbsp;&nbsp;&nbsp;
                   <a href="#" title="Apagar" data-toggle="modal" data-target="#confirm">
                     <i style="color:red;" class='mdi mdi-delete'></i>
-                  </a>
+                  </a> -->
                 </td>
                 <td><?= $lista_de_pagamento->nome; ?></td>
                 <td><?= $lista_de_pagamento->taxa; ?></td>
-                <td><?= $lista_de_pagamento->status; ?></td>
+                <td><?= ($lista_de_pagamento->tipo_taxa == 1) ? "FIXA":"PORCENTAGEM"; ?></td>
+                <td><?= ($lista_de_pagamento->status == 1) ? "ATIVO":"INATIVO"; ?></td>
                 <!-- <td><//?= $lista_em_abertas_1->dia.' - '.$lista_em_abertas_1->horario  ?></td> -->
               </tr>
           <?php  }
@@ -84,6 +86,7 @@ require_once("app/Views/menu_footer/menu.php");
             <th>#</th>
             <th>Nome</th>
             <th>Taxa</th>
+            <th>Tipo Taxa</th>
             <th>Status</th>
             <!--<th></th>-->
             <!-- <th>Id_user</th> -->

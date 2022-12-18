@@ -75,6 +75,10 @@ class ConfigController
             $classeCarregar->onDelete();  
           }
 
+          if($this->urlMetodo == "onDelete_d"){
+            $classeCarregar->onDelete_d();  
+          }
+
           if($this->urlMetodo == "dividas"){
             $classeCarregar->dividas();  
           }

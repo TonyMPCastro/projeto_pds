@@ -65,7 +65,7 @@ require_once("app/Views/menu_footer/menu.php");
                     <i style="color:#0090e7;" class='mdi mdi-account-plus'></i>
                   </a>
                   &nbsp;&nbsp;&nbsp;
-                  <a href="#" title="Apagar" data-toggle="modal" data-target="#confirm">
+                  <a href="" title="Apagar" data-toggle="modal" data-target="#confirm<?= $lista_de_dividas->id; ?>">
                     <i style="color:red;" class='mdi mdi-delete'></i>
                   </a>
                 </td>
@@ -73,7 +73,26 @@ require_once("app/Views/menu_footer/menu.php");
                 <td><?= $lista_de_dividas->valor ?></td>
                 <td><?= date("d/m/Y", strtotime($lista_de_dividas->data_gasto)); ?></td>
               </tr>
-          <?php  }
+
+              <div class="modal fade" id="confirm<?= $lista_de_dividas->id; ?>" role="dialog">
+                <div class="modal-dialog modal-md">
+
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <p> DESEJA REALMENTE FAZER ISSO?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="<?php echo URL . 'financeiro/onDelete_d?id=' . $lista_de_dividas->id; ?>" type="button" class="btn btn-danger" id="delete">Apagar Registo</a>
+                      <button type="button" data-dismiss="modal" class="btn btn-warning">Cancelar</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+          <?php
+
+            }
           }
           ?>
         </tbody>
@@ -91,23 +110,6 @@ require_once("app/Views/menu_footer/menu.php");
 
       </div>
     </div>
-  </div>
-</div>
-
-
-<div class="modal fade" id="confirm" role="dialog">
-  <div class="modal-dialog modal-md">
-
-    <div class="modal-content">
-      <div class="modal-body">
-        <p> DESEJA REALMENTE FAZER ISSO?</p>
-      </div>
-      <div class="modal-footer">
-        <a href="<?php echo URL . 'financeiro/onDelete_d?id=' . $servico->id; ?>" type="button" class="btn btn-danger" id="delete">Apagar Registo</a>
-        <button type="button" data-dismiss="modal" class="btn btn-warning">Cancelar</button>
-      </div>
-    </div>
-
   </div>
 </div>
 

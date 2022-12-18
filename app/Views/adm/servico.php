@@ -65,10 +65,10 @@ use app\Lib\Mask;
                   <a href="<?php echo URL . 'servico_adm/onEdit?id=' . $servico->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
                     <i style="color:#0090e7;" class='mdi mdi-account-plus'></i>
                   </a>
-                  &nbsp;&nbsp;&nbsp;
-                  <button style="border: none;" value="" title="Apagar" id="delete" data-toggle="modal" data-target="#confirm<?= $servico->nome; ?>">
+                  <!-- &nbsp;&nbsp;&nbsp;
+                  <a title="Apagar" id="delete" data-toggle="modal" data-target="#confirm<?= $servico->nome; ?>">
                     <i style="color:red;" class='mdi mdi-delete'></i>
-                  </button>
+                  </a> -->
                 </td>
                 <td><?= $servico->nome; ?></td>
                 <td><?= $servico->valor; ?></td>
@@ -83,7 +83,7 @@ use app\Lib\Mask;
                       <p> DESEJA REALMENTE FAZER ISSO?</p>
                     </div>
                     <div class="modal-footer">
-                      <a href="<?php echo URL . 'servico_adm/onDelete?id_user=' . $servico->id; ?>" type="button" class="btn btn-danger" id="delete_conf">Apagar Registo</a>
+                      <a href="<?php echo URL . 'servico_adm/onDelete?id=' . $servico->id; ?>" type="button" class="btn btn-danger" id="delete_conf">Apagar Registo</a>
                       <button type="button" data-dismiss="modal" class="btn btn-warning">Cancelar</button>
                     </div>
                   </div>
@@ -113,6 +113,6 @@ use app\Lib\Mask;
   </div>
 </div>
 
-  <?php
-  require_once("app/Views/menu_footer/footer.php");
-  ?>
+<?php
+require_once("app/Views/menu_footer/footer.php");
+?>

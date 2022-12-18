@@ -99,5 +99,28 @@ class Financeiro{
         $this->dividas();
     }
 
+    public function onDelete_d()
+    {
+
+        $admUser = new \App\Models\AdmsUser();
+        $admServico = new \App\Models\AdmServico();
+        $this->dados['id'] = $_GET["id"] ? $_GET["id"] : null;
+
+        $ret = $admServico->delete_servico($this->dados);
+        $this->dados['tipo_user_id'] = $_SESSION['tipo_user_id'];
+        $this->dados['menu'] = $admUser->menu_adm($this->dados);
+        $this->dados['servicos'] = $admServico->get_servicos($this->dados);
+
+        if ($ret) {
+            $this->dados['status'] = 'd';
+        } else {
+            $this->dados['status'] = 'd_n';
+        }
+
+
+        $carregarView = new \Core\ConfigView("Views/adm/servico", $this->dados);
+        $carregarView->renderizar();
+    }
+
 
 }

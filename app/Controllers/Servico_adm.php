@@ -48,7 +48,7 @@ class Servico_adm
 
         $admUser = new \App\Models\AdmsUser();
         $admServico = new \App\Models\AdmServico();
-        $this->dados['id'] = $_GET["id_user"] ? $_GET["id_user"] : null;
+        $this->dados['id'] = $_GET["id"] ? $_GET["id"] : null;
 
         $ret = $admServico->delete_servico($this->dados);
         $this->dados['tipo_user_id'] = $_SESSION['tipo_user_id'];
