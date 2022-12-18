@@ -70,7 +70,7 @@ require_once("app/Views/menu_footer/menu.php");
                   </a>
                 </td>
                 <td><?= $lista_de_dividas->descricao; ?></td>
-                <td><?= $lista_de_dividas->valor ?></td>
+                <td><?= number_format($lista_de_dividas->valor,2,",","."); ?></td>
                 <td><?= date("d/m/Y", strtotime($lista_de_dividas->data_gasto)); ?></td>
               </tr>
 

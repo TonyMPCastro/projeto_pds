@@ -23,7 +23,7 @@ class Financeiro extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val = "SELECT * FROM dividas";
+            $query_val = "SELECT * FROM dividas order by id DESC";
             $result_val = $this->conn->prepare($query_val);
             $result_val->execute();
             $this->resultadoBd = json_decode(json_encode($result_val->fetchAll()), FALSE);

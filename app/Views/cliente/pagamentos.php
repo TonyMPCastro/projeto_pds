@@ -72,7 +72,7 @@ require_once("app/Views/menu_footer/menu.php");
                   </a> -->
                 </td>
                 <td><?= $lista_de_pagamento->nome; ?></td>
-                <td><?= $lista_de_pagamento->taxa; ?></td>
+                <td><?= number_format($lista_de_pagamento->taxa,2,",","."); ?></td>
                 <td><?= ($lista_de_pagamento->tipo_taxa == 1) ? "FIXA":"PORCENTAGEM"; ?></td>
                 <td><?= ($lista_de_pagamento->status == 1) ? "ATIVO":"INATIVO"; ?></td>
                 <!-- <td><//?= $lista_em_abertas_1->dia.' - '.$lista_em_abertas_1->horario  ?></td> -->
