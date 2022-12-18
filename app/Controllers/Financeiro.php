@@ -58,17 +58,23 @@ class Financeiro{
         $financeiro = new \App\Models\Financeiro();
         $this->dados['id'] = $_POST["id"] ? $_POST["id"] : null;
         $this->dados['nome'] = $_POST["nome"] ? $_POST["nome"] : null;
-        $this->dados['valor'] = $_POST["valor"] ? $_POST["valor"] : null;
+        $this->dados['taxa'] = $_POST["taxa"] ? $_POST["taxa"] : null;
+        $this->dados['tipo_taxa'] = $_POST["tipo_taxa"] ? $_POST["tipo_taxa"] : null;
         $this->dados['status'] = $_POST["status"] ? $_POST["status"] : null;
 
         if ($this->dados['id']) {
             $ret = $financeiro->update_forma_pag($this->dados);
             if ($ret) {
+                $this->Exception = 'a';
+            }else{
+                $this->Exception = 'a_n';
             }
         } else {
             $ret = $financeiro->salve_forma_pag($this->dados);
             if ($ret) {
                 $this->Exception = 's';
+            }else{
+                $this->Exception = 's_n';
             }
         }
         
@@ -118,6 +124,18 @@ class Financeiro{
         $this->dados['dividas'] = $financeiro->get_divida($this->dados);
 
         $carregarView = new \Core\ConfigView("Views/cliente/cad_dividas", $this->dados);
+        $carregarView->renderizar();
+    }
+
+    public function onEdit_f(){
+        $admUser = new \App\Models\AdmsUser();
+        $financeiro = new \App\Models\Financeiro();
+        $this->dados['tipo_user_id'] = $_SESSION['tipo_user_id'];
+        $this->dados['menu'] = $admUser->menu_adm($this->dados);
+        $this->dados['id'] = $_GET["id"] ? $_GET["id"] : null;
+        $this->dados['f_pagamento'] = $financeiro->get_forma($this->dados);
+
+        $carregarView = new \Core\ConfigView("Views/cliente/cad_pagamentos", $this->dados);
         $carregarView->renderizar();
     }
 
