@@ -105,6 +105,18 @@ if (isset($this->dados['status'])) {
         </script>";
   }
 
+  if ($this->dados['status'] == 's_n') {
+    echo "<script>
+          toastr.warning('Erro: Não foi possivel salvar');
+        </script>";
+  }
+
+  if ($this->dados['status'] == 'a_n') {
+    echo "<script>
+          toastr.warning('Erro: Não foi possivel alterar');
+        </script>";
+  }
+
   if ($this->dados['status'] == 'e') {
     echo "<script>
           toastr.warning('Erro');

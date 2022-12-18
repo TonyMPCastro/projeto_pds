@@ -35,13 +35,13 @@ class AdmsUser extends Conn
             
 
                 $this->conn = $this->connect();
-                $query_val_login = "SELECT *
+                $query_val = "SELECT *
                 FROM menu_item
                 WHERE tipo_user_id =:id";
-                $result_val_login = $this->conn->prepare($query_val_login);
-                $result_val_login->bindParam(":id", $this->dados['tipo_user_id'], PDO::PARAM_STR);
-                $result_val_login->execute();
-                $this->resultadoBd = $result_val_login->fetchAll();
+                $result_val = $this->conn->prepare($query_val);
+                $result_val->bindParam(":id", $this->dados['tipo_user_id'], PDO::PARAM_STR);
+                $result_val->execute();
+                $this->resultadoBd = $result_val->fetchAll();
                 if ($this->resultadoBd) {
                     $_SESSION['menu'] = $this->resultadoBd;
                     return $this->resultadoBd;
@@ -61,12 +61,12 @@ class AdmsUser extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val_login = "SELECT u.id_user,t.id_tipo,u.nome_user,t.nome_tipo,status_user
+            $query_val = "SELECT u.id_user,t.id_tipo,u.nome_user,t.nome_tipo,status_user
                 FROM user u
                 JOIN tipo_user t on  t.id_tipo = u.tipo_user_id";
-            $result_val_login = $this->conn->prepare($query_val_login);
-            $result_val_login->execute();
-            $this->resultadoBd = json_decode(json_encode($result_val_login->fetchAll()), FALSE);
+            $result_val = $this->conn->prepare($query_val);
+            $result_val->execute();
+            $this->resultadoBd = json_decode(json_encode($result_val->fetchAll()), FALSE);
             if ($this->resultadoBd) {
                 return $this->resultadoBd;
             } else {
@@ -84,11 +84,12 @@ class AdmsUser extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val_login = "SELECT * FROM marcacao_servico where user_id = :id";
-            $result_val_login = $this->conn->prepare($query_val_login);
-            $result_val_login->bindParam(":id", $_SESSION['usuario_id'], PDO::PARAM_STR);
-            $result_val_login->execute();
-            $this->resultadoBd = json_decode(json_encode($result_val_login->fetchAll()), FALSE);
+            $query_val = "SELECT * FROM marcacao_servico m
+            join forma_pagamento f on f.id = m.forma_pagamento_id  where m.user_id = :id";
+            $result_val = $this->conn->prepare($query_val);
+            $result_val->bindParam(":id", $_SESSION['usuario_id'], PDO::PARAM_STR);
+            $result_val->execute();
+            $this->resultadoBd = json_decode(json_encode($result_val->fetchAll()), FALSE);
             if ($this->resultadoBd) {
                 return $this->resultadoBd;
             } else {
@@ -107,14 +108,14 @@ class AdmsUser extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val_login = "SELECT u.id_user,t.id_tipo,u.nome_user,t.nome_tipo,status_user
+            $query_val = "SELECT u.id_user,t.id_tipo,u.nome_user,t.nome_tipo,status_user
                 FROM user u
                 JOIN tipo_user t on  t.id_tipo = u.tipo_user_id
                 WHERE id_user = :id";
-            $result_val_login = $this->conn->prepare($query_val_login);
-            $result_val_login->bindParam(":id", $this->dados['id_user'], PDO::PARAM_STR);
-            $result_val_login->execute();
-            $this->resultadoBd = json_decode(json_encode($result_val_login->fetch()), FALSE);
+            $result_val = $this->conn->prepare($query_val);
+            $result_val->bindParam(":id", $this->dados['id_user'], PDO::PARAM_STR);
+            $result_val->execute();
+            $this->resultadoBd = json_decode(json_encode($result_val->fetch()), FALSE);
             if ($this->resultadoBd) {
                 return $this->resultadoBd;
             } else {
@@ -133,11 +134,11 @@ class AdmsUser extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val_login = "DELETE FROM user WHERE id_user = :id";
-            $result_val_login = $this->conn->prepare($query_val_login);
-            $result_val_login->bindParam(":id", $this->dados['id_user'], PDO::PARAM_STR);
+            $query_val = "DELETE FROM user WHERE id_user = :id";
+            $result_val = $this->conn->prepare($query_val);
+            $result_val->bindParam(":id", $this->dados['id_user'], PDO::PARAM_STR);
 
-            if ($result_val_login->execute()) {
+            if ($result_val->execute()) {
 
                 $this->resultadoBd[0] = "Log Delete User";
                 $this->resultadoBd["id_user"] = $this->dados['id_user'];
@@ -170,10 +171,10 @@ class AdmsUser extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val_login = "SELECT * FROM tipo_user";
-            $result_val_login = $this->conn->prepare($query_val_login);
-            $result_val_login->execute();
-            $this->resultadoBd = json_decode(json_encode($result_val_login->fetchAll()), FALSE);
+            $query_val = "SELECT * FROM tipo_user";
+            $result_val = $this->conn->prepare($query_val);
+            $result_val->execute();
+            $this->resultadoBd = json_decode(json_encode($result_val->fetchAll()), FALSE);
             if ($this->resultadoBd) {
                 return $this->resultadoBd;
             } else {
