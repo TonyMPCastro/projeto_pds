@@ -77,4 +77,5 @@ if (isset($this->dados['dividas'])) {
 </div>
 
 
+
 <?php require_once("app/Views/menu_footer/footer.php"); ?>
