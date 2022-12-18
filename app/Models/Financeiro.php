@@ -198,6 +198,7 @@ class Financeiro extends Conn
                 $this->resultadoBd["divida"] = $this->dados['id'];
                 $this->log(json_encode($this->resultadoBd, true));
                 return true;
+                
             } else {
                 throw new PDOException("Erro: Não foi possível executar a declaração sql");
             }
