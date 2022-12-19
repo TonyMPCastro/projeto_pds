@@ -1,7 +1,9 @@
 # DEMARCARE
 
   A necessidade de automação de processos é algo imprescindível para o sucesso de qualquer empresa e a busca por sistemas de informação que auxiliem na tomada de decisão dos gestores tem crescido a cada ano que passa. Entretanto, diversas empresas de pequeno porte ainda possuem controles baseados em planilhas e anotações manuais.
+  
   O sistema aqui descrito é um sistema que pretende dar suporte ao controle de finanças e de marcação de consultas para empresas do ramo de clinicas de estética. Trata-se de uma ferramenta de suporte a tomada de decisão e auxílio no processo de marcação de consultas.
+  
   As funcionalidades do sistema serão mostradas, à medida que os requisitos forem explicados, mas todas elas convergem para a ideia do software dita anteriormente.
 
 
@@ -69,26 +71,16 @@ Mencione as ferramentas que você usou para criar seu projeto
 * [Maven](https://maven.apache.org/) - Gerente de Dependência
 * [ROME](https://rometools.github.io/rome/) - Usada para gerar RSS
 
-## 🖇️ Colaborando
-
-Por favor, leia o [COLABORACAO.md](https://gist.github.com/usuario/linkParaInfoSobreContribuicoes) para obter detalhes sobre o nosso código de conduta e o processo para nos enviar pedidos de solicitação.
-
-## 📌 Versão
-
-Nós usamos [SemVer](http://semver.org/) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://github.com/suas/tags/do/projeto). 
-
 ## ✒️ Autores
 
-Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
-
-* **Um desenvolvedor** - *Trabalho Inicial* - [umdesenvolvedor](https://github.com/linkParaPerfil)
+* **Antonio M P Castro** - *Gestor do Projeto* - [umdesenvolvedor](https://github.com/TonyMPCastro)
 * **Fulano De Tal** - *Documentação* - [fulanodetal](https://github.com/linkParaPerfil)
 
 Você também pode ver a lista de todos os [colaboradores](https://github.com/usuario/projeto/colaboradores) que participaram deste projeto.
 
 ## 📄 Licença
 
-Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE.md](https://github.com/usuario/projeto/licenca) para detalhes.
+Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE.md](https://github.com/TonyMPCastro/projeto_pds/blob/main/LICENSE) para detalhes.
 
 ## 🎁 Expressões de gratidão
 
