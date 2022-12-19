@@ -73,10 +73,10 @@ Mencione as ferramentas que você usou para criar seu projeto
 
 ## ✒️ Autores
 
-* **Antonio M P Castro** - *Gestor do Projeto* - [umdesenvolvedor](https://github.com/TonyMPCastro)
-* **Fulano De Tal** - *Documentação* - [fulanodetal](https://github.com/linkParaPerfil)
+* **Antonio M P Castro** - *Gestor do Projeto* - [DEV](https://github.com/TonyMPCastro)
+* **Antonio Fialho** - *Desenvolvedor* - [DEV](https://github.com/AntonioFialhoSN)
 
-Você também pode ver a lista de todos os [colaboradores](https://github.com/usuario/projeto/colaboradores) que participaram deste projeto.
+Você também pode ver a lista de todos os [colaboradores](https://github.com/TonyMPCastro/projeto_pds/graphs/contributors) que participaram deste projeto.
 
 ## 📄 Licença
 
