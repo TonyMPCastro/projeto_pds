@@ -67,9 +67,15 @@ Adicione notas adicionais sobre como implantar isso em um sistema ativo
 
 Mencione as ferramentas que você usou para criar seu projeto
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - O framework web usado
-* [Maven](https://maven.apache.org/) - Gerente de Dependência
-* [ROME](https://rometools.github.io/rome/) - Usada para gerar RSS
+* [Figma] (https://www.figma.com) - Editor gráfico de vetor e prototipagem de projetos.
+* [PHP 8] (https://www.php.net/) - Linguagem PHP.
+* [JavaScript] (https://www.javascript.com/) - Linguagem  Javascript.
+* [MySQL] - (https://www.mysql.com/) - SGBD.
+* [Bootstrap](https://getbootstrap.com/) - O framework web usado
+* [Material Design](https://m2.material.io/) - Sistema de design
+* [Composer](https://getcomposer.org/) - Gerente de Dependência
+* [jQuery] (https://jquery.com/) - Biblioteca jQuery Javascript.
+* [DataTables] (https://datatables.net/) - Plug-in para a biblioteca jQuery Javascript.
 
 ## ✒️ Autores
 
@@ -88,7 +94,3 @@ Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE.md](h
 * Convide alguém da equipe para uma cerveja 🍺;
 * Um agradecimento publicamente 🫂;
 * etc.
-
-
----
-⌨️ com ❤️ por [Armstrong Lohãns](https://gist.github.com/lohhans) 😊
