@@ -56,8 +56,7 @@ class AdmsUser extends Conn
     }
 
 
-    public function get_users(array $dados = null)
-    {
+    public function get_users(array $dados = null){
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
@@ -91,7 +90,8 @@ class AdmsUser extends Conn
             join forma_pagamento f on f.id =  m.forma_pagamento_id 
             join horarios h on h.id = m.horarios_id 
             join semana s on s.id = h.semana_id 
-             where m.user_id = :id";
+            where m.user_id = :id
+            order by m.status ASC, s.id ASC, h.horario ASC;";
             $result_val = $this->conn->prepare($query_val);
             $result_val->bindParam(":id", $_SESSION['usuario_id'], PDO::PARAM_STR);
             $result_val->execute();
@@ -191,4 +191,36 @@ class AdmsUser extends Conn
             echo $erro->getMessage();
         }
     }
+
+
+    
+    public function get_marcacao(array $dados = null)
+    {
+        try {
+            $this->dados = $dados;
+            $this->conn = $this->connect();
+            $query_val = "SELECT m.id, m.horario_agendado, m.status,s.dia
+            ,u.nome_user
+            FROM marcacao_servico m
+            join horarios h on h.id = m.horarios_id 
+            join semana s on s.id = h.semana_id 
+            join user u on u.id_user = m.user_id
+            where m.status = 2 and m.horario_agendado >= :data_inicio and 
+            m.horario_agendado <= :data_fim";
+            $result_val = $this->conn->prepare($query_val);
+            $result_val->bindParam(":data_inicio", $this->dados['data_inicio'], PDO::PARAM_STR);
+            $result_val->bindParam(":data_fim", $this->dados['data_fim'], PDO::PARAM_STR);
+            $result_val->execute();
+            $this->resultadoBd = json_decode(json_encode($result_val->fetchAll()), FALSE);
+            if ($this->resultadoBd) {
+                return $this->resultadoBd;
+            } else {
+                throw new PDOException("Erro: Não foi possível executar a declaração sql");
+                return $this->resultadoBd;
+            }
+        } catch (PDOException $erro) {
+            echo $erro->getMessage();
+        }
+    }
+
 }

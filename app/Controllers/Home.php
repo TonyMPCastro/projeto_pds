@@ -13,9 +13,14 @@ class Home
     }
      
     public function index() {
-        $visualizarLogin = new \App\Models\AdmsUser();
+        $admUser = new \App\Models\AdmsUser();
+        $admServico = new \App\Models\AdmServico();
         $this->dados['tipo_user_id'] = $_SESSION['tipo_user_id'];
-        $this->dados['menu'] = $visualizarLogin->menu_adm($this->dados);
+        $this->dados['menu'] = $admUser->menu_adm($this->dados);
+        $this->dados['semanas'] = $admServico->get_semanas($this->dados);
+        $this->dados['data_inicio'] = date("2022-12-18");
+        $this->dados['data_fim'] =  date("2022-12-24");
+        $this->dados['agendamentos'] = $admUser->get_marcacao($this->dados);
        $carregarView = new \Core\ConfigView("Views/adm/home", $this->dados);
        $carregarView->renderizar();
      }

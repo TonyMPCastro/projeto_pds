@@ -17,16 +17,14 @@
 <!-- End custom js for this page -->
 </body>
 
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 
 <script>
-
   $(document).ready(function() {
 
-    
+
     toastr.options = {
       "closeButton": true,
       "newestOnTop": false,
@@ -45,34 +43,39 @@
 
     <?php
 
-if (isset($table)) {
-  ?>
-    $('#example<?= $table; ?>').DataTable({
-      "language": {
-        "sProcessing": "Procesando...",
-        "sLengthMenu": "Exibir _MENU_ registros por página",
-        "sZeroRecords": "Nenhum resultado encontrado",
-        "sEmptyTable": "Nenhum resultado encontrado",
-        "sInfo": "Exibindo do _START_ até _END_ de um total de _TOTAL_ registros",
-        "sInfoEmpty": "Exibindo do 0 até 0 de um total de 0 registros",
-        "sInfoFiltered": "(Filtrado de um total de _MAX_ registros)",
-        "sInfoPostFix": "",
-        "sSearch": "Buscar:",
-        "sUrl": "",
-        "sInfoThousands": ",",
-        "sLoadingRecords": "Cargando...",
-        "oPaginate": {
-          "sFirst": "Primero",
-          "sLast": "Último",
-          "sNext": "Próximo",
-          "sPrevious": "Anterior"
-        },
-        "oAria": {
-          "sSortAscending": ": Ativar para ordenar a columna de maneira ascendente",
-          "sSortDescending": ": Ativar para ordenar a columna de maneira descendente"
+    if (isset($table)) {
+    ?>
+      $('#example<?= $table; ?>').DataTable({
+        "order": [],
+        "columnDefs": [{
+          "targets": 'no-sort',
+          "orderable": false
+        }],
+        "language": {
+          "sProcessing": "Procesando...",
+          "sLengthMenu": "Exibir _MENU_ registros por página",
+          "sZeroRecords": "Nenhum resultado encontrado",
+          "sEmptyTable": "Nenhum resultado encontrado",
+          "sInfo": "Exibindo do _START_ até _END_ de um total de _TOTAL_ registros",
+          "sInfoEmpty": "Exibindo do 0 até 0 de um total de 0 registros",
+          "sInfoFiltered": "(Filtrado de um total de _MAX_ registros)",
+          "sInfoPostFix": "",
+          "sSearch": "Buscar:",
+          "sUrl": "",
+          "sInfoThousands": ",",
+          "sLoadingRecords": "Cargando...",
+          "oPaginate": {
+            "sFirst": "Primero",
+            "sLast": "Último",
+            "sNext": "Próximo",
+            "sPrevious": "Anterior"
+          },
+          "oAria": {
+            "sSortAscending": ": Ativar para ordenar a columna de maneira ascendente",
+            "sSortDescending": ": Ativar para ordenar a columna de maneira descendente"
+          }
         }
-      }
-    });
+      });
     <?php }  ?>
   });
 </script>

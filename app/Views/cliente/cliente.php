@@ -20,6 +20,7 @@ if (isset($this->dados['servicos'])) {
 $servicos = [];
 }
 
+
 $table = 3;
 ?>
 <?php 
@@ -45,11 +46,11 @@ use app\Lib\Mask;
     <br>
     <div class="">
       <div class="card-header">
-        <strong>HORÁRIOS</strong>
+        <strong>HORÁRIOS PENDENTES</strong>
       </div>
       <br>
       <div class="text-center">
-        <a href="<?php echo URL . 'servico_adm/onShow' ?>" class="btn btn-outline-success btn-lg">CADASTRAR</a>
+        <a href="<?php echo URL . 'cliente/onShow' ?>" class="btn btn-outline-success btn-lg">AGENDAR HORÁRIO</a>
       </div>
       <br>
       <table id="example<?= $table; ?>" class="display" style="width:100%">

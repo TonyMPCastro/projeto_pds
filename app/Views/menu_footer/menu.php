@@ -11,6 +11,7 @@ if (isset($this->dados['menu'])) {
   <link rel="stylesheet" href="<?php echo URL . 'app/assets/vendors/mdi/css/materialdesignicons.min.css'; ?>">
   <link rel="stylesheet" href="<?php echo URL . 'app/assets/vendors/css/vendor.bundle.base.css'; ?>">
   <!-- endinject -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
   <!-- Layout styles -->
   <link rel="stylesheet" href="<?php echo URL . 'app/assets/css/style.css'; ?>">
