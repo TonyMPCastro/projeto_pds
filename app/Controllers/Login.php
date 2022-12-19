@@ -33,11 +33,12 @@ class Login
                 if ($visualizarLogin->getResultado()) {
 
                     if ($_SESSION['tipo_user_id'] == 2) {
-
-                        $urlDestino = URL . "home2/index";
+                        $_SESSION['home'] = "home2/index";
+                        $urlDestino = URL . $_SESSION['home'];
                     } else {
 
-                        $urlDestino = URL . "home/index";
+                        $_SESSION['home'] = "home/index";
+                        $urlDestino = URL . $_SESSION['home'];
                     }
 
                     header("Location: $urlDestino");

@@ -95,8 +95,8 @@ use app\Lib\Mask;
                 </td>
                 <td><?= $lista_em_abertas_1->nome_user; ?></td>
                 <td><?= $str_serv ?></td>
-                <td><?= $lista_em_abertas_1->email ?></td>
-                <td><?= Mask::setmask($lista_em_abertas_1->telefone, '(##) #####-####'); ?></td>
+                <td><a style="font-size: 26px;" href="mailto:<?= $lista_em_abertas_1->email ?>" title="Email"><i class="mdi mdi-email"></i></a></td>
+                <td><a target="_blanck" href="<?php echo "https://api.whatsapp.com/send?phone=55".$lista_em_abertas_1->telefone;?>"><i style="font-size: 26px;"  class="mdi mdi-whatsapp"></i><?= Mask::setmask($lista_em_abertas_1->telefone, '(##) #####-####'); ?></a></td>
                 <td><?= $lista_em_abertas_1->dia.' - '.$lista_em_abertas_1->horario  ?></td>
               </tr>
           <?php  }

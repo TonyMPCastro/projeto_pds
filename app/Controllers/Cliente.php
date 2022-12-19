@@ -35,8 +35,8 @@ class Cliente
         $this->dados['servicos'] = $admServico->get_servicos_w($this->dados);
         $this->dados['horarios'] = $admServico->get_horarios($this->dados);
         $this->dados['users'] = $admUser->get_users($this->dados);
-        $this->dados['data_inicio'] = date("2022-12-18");
-        $this->dados['data_fim'] =  date("2022-12-24");
+        $this->dados['data_inicio'] = date("Y-m-d");
+        $this->dados['data_fim'] =  date('Y-m-d', strtotime(date("Y-m-d"). ' + 7 days'));
 
         $this->dados['forma_pagamentos'] = $financeiro->get_form_pag($this->dados);
 

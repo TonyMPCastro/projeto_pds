@@ -60,7 +60,7 @@ class AdmsUser extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val = "SELECT u.id_user,t.id_tipo,u.nome_user,t.nome_tipo,status_user
+            $query_val = "SELECT u.id_user,u.email,t.id_tipo,u.nome_user,t.nome_tipo,status_user
                 FROM user u
                 JOIN tipo_user t on  t.id_tipo = u.tipo_user_id";
             $result_val = $this->conn->prepare($query_val);

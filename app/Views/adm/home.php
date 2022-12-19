@@ -41,7 +41,7 @@ date_default_timezone_set('America/Sao_Paulo');
         <?php 
         if ($semanas) {
           foreach ($semanas as $s) {
-            $d_semana = mb_strtoupper(utf8_encode(strftime("%A", strtotime(date("Y-m-20")))), 'UTF-8');
+            $d_semana = mb_strtoupper(utf8_encode(strftime("%A", strtotime(date("Y-m-d")))), 'UTF-8');
             $d = mb_strtoupper($s->dia, 'UTF-8');
         ?>
             <div class="col-sm-6 col-lg-2" <?php if ($d_semana == $d) {

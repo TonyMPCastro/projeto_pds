@@ -42,6 +42,7 @@ $table = 1;
           <tr>
             <th>#</th>
             <th>Nome</th>
+            <th>Email</th>
             <th>Tipo</th>
             <th>Staus</th>
             <!-- <th>Id Tipo</th> -->
@@ -62,6 +63,7 @@ $table = 1;
                   </a> -->
                 </td>
                 <td><?= $user->nome_user; ?></td>
+                <td><a style="font-size: 26px;" href="mailto:<?= $user->email ?>" title="Email"><i class="mdi mdi-email"></i></a></td>
                 <td><?= $user->nome_tipo; ?></td>
                 <td><?= ($user->status_user == 2) ? "Ativo" : "Desativado"; ?></td>
                 <!-- <td><?= $user->id_tipo; ?></td> -->
@@ -93,6 +95,7 @@ $table = 1;
           <tr>
             <th>#</th>
             <th>Nome</th>
+            <th>Email</th>
             <th>Tipo</th>
             <th>Staus</th>
             <!-- <th>Id Tipo</th> -->
