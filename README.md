@@ -62,8 +62,7 @@ Dar exemplos
 Adicione notas adicionais sobre como implantar isso em um sistema ativo
 
 ## 🛠️ Construído com
-
-Mencione as ferramentas que você usou para criar seu projeto
+Ferramentas ultilizadas na contrução do projeto projeto:
 
 * [Figma](https://www.figma.com) - Editor gráfico de vetor e prototipagem de projetos.
 * [PHP 8](https://www.php.net/) - Linguagem PHP.
