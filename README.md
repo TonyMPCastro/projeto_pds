@@ -1,4 +1,4 @@
-# DEMARCARE
+# DERMACARE
 
   A necessidade de automação de processos é algo imprescindível para o sucesso de qualquer empresa e a busca por sistemas de informação que auxiliem na tomada de decisão dos gestores tem crescido a cada ano que passa. Entretanto, diversas empresas de pequeno porte ainda possuem controles baseados em planilhas e anotações manuais.
   
