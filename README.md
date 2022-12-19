@@ -65,15 +65,15 @@ Adicione notas adicionais sobre como implantar isso em um sistema ativo
 
 Mencione as ferramentas que você usou para criar seu projeto
 
-* [Figma] (https://www.figma.com) - Editor gráfico de vetor e prototipagem de projetos.
-* [PHP 8] (https://www.php.net/) - Linguagem PHP.
-* [JavaScript] (https://www.javascript.com/) - Linguagem  Javascript.
-* [MySQL] - (https://www.mysql.com/) - SGBD.
+* [Figma](https://www.figma.com) - Editor gráfico de vetor e prototipagem de projetos.
+* [PHP 8](https://www.php.net/) - Linguagem PHP.
+* [JavaScript](https://www.javascript.com/) - Linguagem  Javascript.
+* [MySQL](https://www.mysql.com/) - SGBD.
 * [Bootstrap](https://getbootstrap.com/) - O framework web usado
 * [Material Design](https://m2.material.io/) - Sistema de design
 * [Composer](https://getcomposer.org/) - Gerente de Dependência
-* [jQuery] (https://jquery.com/) - Biblioteca jQuery Javascript.
-* [DataTables] (https://datatables.net/) - Plug-in para a biblioteca jQuery Javascript.
+* [jQuery](https://jquery.com/) - Biblioteca jQuery Javascript.
+* [DataTables](https://datatables.net/) - Plug-in para a biblioteca jQuery Javascript.
 
 ## ✒️ Autores
 
