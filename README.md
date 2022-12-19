@@ -2,10 +2,8 @@
 
   A necessidade de automação de processos é algo imprescindível para o sucesso de qualquer empresa e a busca por sistemas de informação que auxiliem na tomada de decisão dos gestores tem crescido a cada ano que passa. Entretanto, diversas empresas de pequeno porte ainda possuem controles baseados em planilhas e anotações manuais.
   
-  O sistema aqui descrito é um sistema que pretende dar suporte ao controle de finanças e de marcação de consultas para empresas do ramo de clinicas de estética. Trata-se de uma ferramenta de suporte a tomada de decisão e auxílio no processo de marcação de consultas.
+  Este software é um sistema que pretende dar suporte ao controle de finanças e de marcação de consultas para empresas do ramo de clinicas de estética. Trata-se de uma ferramenta de suporte a tomada de decisão e auxílio no processo de marcação de consultas.
   
-  As funcionalidades do sistema serão mostradas, à medida que os requisitos forem explicados, mas todas elas convergem para a ideia do software dita anteriormente.
-
 
 ## 🚀 Começando
 
