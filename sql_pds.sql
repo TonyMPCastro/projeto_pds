@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13-Dez-2022 às 23:33
+-- Tempo de geração: 19-Dez-2022 às 05:27
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 8.0.7
 
@@ -37,6 +37,17 @@ CREATE TABLE `dividas` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Extraindo dados da tabela `dividas`
+--
+
+INSERT INTO `dividas` (`id`, `valor`, `descricao`, `data_gasto`, `data_hora_cri`, `data_hora_at`, `user_id`) VALUES
+(1, 500, 'Produtos de Pele\r\n', '2022-12-30', '2022-12-15 19:44:01', '2022-12-15 19:44:01', 2),
+(2, 200, 'Cera Depiladora', '2022-12-29', '2022-12-15 19:47:42', '2022-12-15 19:47:42', 1),
+(3, 430, 'Energia', '2022-12-20', '2022-12-15 19:49:40', '2022-12-15 19:49:40', 2),
+(4, 32, 'Conta de Água\r\n', '2022-12-20', '2022-12-15 19:51:12', '2022-12-15 19:51:12', 3),
+(11, 10, 'AGUA MINERAL', '2022-12-13', '2022-12-18 04:09:45', '2022-12-18 04:09:58', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -59,7 +70,8 @@ INSERT INTO `forma_pagamento` (`id`, `nome`, `taxa`, `tipo_taxa`, `status`) VALU
 (1, 'PIX', 3, 1, 1),
 (2, 'CARTÃO DE CREDITO', 5.2, 2, 1),
 (3, 'CARTÃO DE DEBITO', 4.5, 2, 1),
-(4, 'DINHEIRO', 0, 1, 1);
+(4, 'DINHEIRO', 0, 1, 1),
+(5, '', 0, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -80,11 +92,13 @@ CREATE TABLE `horarios` (
 --
 
 INSERT INTO `horarios` (`id`, `semana_id`, `horario`, `data_hora_at`, `status`) VALUES
-(1, 1, '09:00:00', '2022-12-13 23:24:11', 2),
-(2, 2, '09:00:00', '2022-12-13 23:24:11', 2),
-(3, 3, '09:00:00', '2022-12-13 23:24:11', 2),
-(4, 4, '09:00:00', '2022-12-13 23:24:11', 2),
-(5, 5, '09:00:00', '2022-12-13 23:24:11', 2);
+(1, 1, '09:00:00', '2022-12-13 23:24:11', 1),
+(2, 2, '09:00:00', '2022-12-13 23:24:11', 1),
+(3, 3, '09:00:00', '2022-12-13 23:24:11', 1),
+(4, 4, '09:00:00', '2022-12-13 23:24:11', 1),
+(5, 5, '09:00:00', '2022-12-13 23:24:11', 1),
+(6, 2, '10:00:00', '2022-12-18 23:27:42', 1),
+(7, 2, '14:00:00', '2022-12-18 23:27:42', 1);
 
 -- --------------------------------------------------------
 
@@ -98,7 +112,7 @@ CREATE TABLE `marcacao_servico` (
   `forma_pagamento_id` int(11) NOT NULL,
   `horarios_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `horario_agendado` datetime ,
+  `horario_agendado` datetime DEFAULT NULL,
   `data_hora_at` datetime NOT NULL,
   `data_hora_cri` datetime NOT NULL,
   `status` int(11) NOT NULL
@@ -108,9 +122,15 @@ CREATE TABLE `marcacao_servico` (
 -- Extraindo dados da tabela `marcacao_servico`
 --
 
-INSERT INTO `marcacao_servico` (`id`, `servicos`, `forma_pagamento_id`, `horarios_id`, `user_id`, `data_hora_at`, `data_hora_cri`, `status`) VALUES
-(1, '1;2', 1, 1, 3, '2022-12-13 23:31:38', '2022-12-13 23:31:38', 1),
-(2, '1;2;3', 1, 2, 2, '2022-12-13 23:57:24', '2022-12-12 23:57:24', 1);
+INSERT INTO `marcacao_servico` (`id`, `servicos`, `forma_pagamento_id`, `horarios_id`, `user_id`, `horario_agendado`, `data_hora_at`, `data_hora_cri`, `status`) VALUES
+(1, '1;2', 1, 1, 3, NULL, '2022-12-13 23:31:38', '2022-12-13 23:31:38', 1),
+(2, '1;2;3', 1, 2, 2, '2022-12-06 15:30:00', '2022-12-13 23:57:24', '2022-12-12 23:57:24', 3),
+(3, '1', 2, 2, 6, '2022-12-20 10:30:25', '2022-12-15 20:46:25', '2022-12-15 20:46:25', 2),
+(4, ';1;1;3', 5, 4, 2, NULL, '2022-12-19 00:53:33', '2022-12-30 16:51:17', 1),
+(5, '2;3', 4, 2, 9, '2022-12-20 14:30:00', '2022-12-20 16:53:07', '2022-12-20 16:53:07', 2),
+(6, '2', 1, 2, 7, '2022-12-19 12:30:25', '2022-12-28 20:46:25', '2022-12-28 20:46:25', 2),
+(9, '2;2;3', 5, 6, 2, NULL, '2022-12-19 01:20:19', '2022-12-19 00:55:38', 1),
+(10, '1;1;3', 5, 5, 2, '2022-12-28 10:00:43', '2022-12-19 01:21:52', '2022-12-19 01:21:52', 2);
 
 -- --------------------------------------------------------
 
@@ -133,10 +153,12 @@ CREATE TABLE `menu_item` (
 
 INSERT INTO `menu_item` (`id_menu_item`, `nome`, `icon`, `url`, `menu_item`, `tipo_user_id`) VALUES
 (1, 'HOME ADM', 'mdi mdi-home', 'home/onShow', 'HOME', 1),
-(2, 'HOME ALUNO', 'mdi mdi-home', 'aluno/index', 'HOME', 2),
-(3, 'Users', 'mdi mdi-table-large', 'adm_user/index', 'Users', 1),
+(2, 'HOME ALUNO', 'mdi mdi-home', 'home2/index', 'HOME', 2),
+(3, 'Pendentes', 'mdi mdi-calendar', 'cliente/index', 'Pendentes', 1),
 (4, 'Serviços', 'mdi mdi-settings', 'servico_adm/index', 'Serviços', 1),
-(5, 'Horários Em Aberto', 'mdi mdi-calendar', 'cliente/index', 'Horários Em Aberto', 1);
+(5, 'Users', 'mdi mdi-table-large', 'adm_user/index', 'Users', 1),
+(7, 'Dividas ', 'mdi mdi-square-inc-cash', 'financeiro/dividas', 'Dividas', 1),
+(8, 'Forma Pagamentos', 'mdi mdi-tag-text-outline', 'financeiro/formaPagamento', 'Forma Pagamentos', 1);
 
 -- --------------------------------------------------------
 
@@ -180,10 +202,9 @@ CREATE TABLE `servico` (
 --
 
 INSERT INTO `servico` (`id`, `nome`, `valor`, `status`) VALUES
-(1, 'TESTE', 100.55, 2),
-(5, '100', 111, 2),
-(8, 'TESTE', 100.55, 2),
-(9, 'Novo Servico', 1000, 2);
+(1, 'Limpeza de pele', 110, 1),
+(2, 'Preenchimento Labial', 200, 1),
+(3, 'Drenagem Linfática', 400, 1);
 
 -- --------------------------------------------------------
 
@@ -230,9 +251,13 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `tipo_user_id`, `nome_user`, `email`, `senha`, `telefone`, `data_nascimento`, `cpf`, `grau_formacao`, `formacao_instituicao`, `status_user`) VALUES
 (1, 1, 'ANTONIO CASTRO', 'antonio@edukar.com', 'e10adc3949ba59abbe56e057f20f883e', '98989670143', '1988-08-15', '020.142.805-17', 'Ensino Superior', 'Universidade Paulista', 2),
-(2, 2, 'Gestrude das Flores', 'Gesflores@edukar.com', 'e10adc3949ba59abbe56e057f20f883e', '98988203742', '1980-05-10', '081.232.401-21', 'Ensino Superior', 'Universidade São Luís', 2),
+(2, 2, 'Gestrude das Flores', 'gesflores@edukar.com', 'e10adc3949ba59abbe56e057f20f883e', '98988203742', '1980-05-10', '081.232.401-21', 'Ensino Superior', 'Universidade São Luís', 2),
 (3, 2, 'Franscico Raimundo', 'Fraraimundos@edukar.com', '202cb962ac59075b964b07152d234b70', '98989670143', '1988-08-15', '020.142.805-17', 'Ensino Superior', 'Universidade Paulista', 2),
-(4, 2, 'Janaina Almeida', 'Janalmeida@edukar.com', '202cb962ac59075b964b07152d234b70', '98988250575', '1999-04-01', '053.124.879-37', 'Ensino Médio', 'Colegio Educacional', 2);
+(4, 2, 'Janaina Almeida', 'Janalmeida@edukar.com', '202cb962ac59075b964b07152d234b70', '98988250575', '1999-04-01', '053.124.879-37', 'Ensino Médio', 'Colegio Educacional', 2),
+(6, 2, 'Maria Eduarda Espindola', 'duda.gatinha@hotmail.com', '123456', '98982042651', '2002-05-04', '61489368924', NULL, NULL, 1),
+(7, 2, 'Vitoria Lima Bandeira', 'segue.alider@hotmail.com', '123456', '98987770038', '2000-04-01', '62354898602', NULL, NULL, 1),
+(8, 2, 'Jeffersn de Carvalho', 'audacioso69@hotmail.com', '123456', '9884622017', '1995-05-24', '69856342856', NULL, NULL, 1),
+(9, 2, 'Kylian Mbapé ', 'pipoqueiro02@gmail.com', '123456', '98991563408', '1998-12-20', '02305608902', NULL, NULL, 1);
 
 --
 -- Índices para tabelas despejadas
@@ -307,31 +332,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de tabela `dividas`
 --
 ALTER TABLE `dividas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `forma_pagamento`
 --
 ALTER TABLE `forma_pagamento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `horarios`
 --
 ALTER TABLE `horarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `marcacao_servico`
 --
 ALTER TABLE `marcacao_servico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `menu_item`
 --
 ALTER TABLE `menu_item`
-  MODIFY `id_menu_item` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_menu_item` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `semana`
@@ -343,7 +368,7 @@ ALTER TABLE `semana`
 -- AUTO_INCREMENT de tabela `servico`
 --
 ALTER TABLE `servico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `tipo_user`
@@ -355,7 +380,7 @@ ALTER TABLE `tipo_user`
 -- AUTO_INCREMENT de tabela `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restrições para despejos de tabelas
