@@ -54,7 +54,7 @@ if (isset($this->dados['menu'])) {
           <li class="nav-item menu-items" id="<?php echo $item['url'] ?>">
             <a class="nav-link" href="<?php echo URL . $item['url']; ?>">
               <span class="menu-icon">
-                <i class="<?php echo $item['icon']; ?>"></i>
+                <i style='font-size:18px' class="<?php echo $item['icon']; ?>"></i>
               </span>
               <span class="menu-title"><?php echo $item['menu_item']; ?></span>
             </a>

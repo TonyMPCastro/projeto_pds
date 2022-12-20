@@ -36,6 +36,12 @@ if (isset($this->dados['servicos'])) {
     $servicos = [];
 }
 
+if (isset($this->dados['servico'])) {
+    $servico = $this->dados['servico'];
+} else {
+    $servico = [];
+}
+
 if (isset($this->dados['users'])) {
     $users = $this->dados['users'];
 } else {
@@ -55,28 +61,27 @@ if (isset($this->dados['forma_pagamentos'])) {
 <?php include "app/Views/menu_footer/menu.php"; ?>
 
 <style>
-    .js-example-basic-single{
+    .js-example-basic-single {
         border: 1px solid black;
     }
-
 </style>
 <!-- partial -->
 <div class="main-panel">
     <div class="content-wrapper">
         <a href="<?php echo URL . 'home/onShow' ?>" class="menu-link" title="Home"><i class="mdi mdi-home"></i></a>
         >
-        <a href="<?php echo URL . 'financeiro/onDividas' ?>" class="menu-link"><span>CADASTRO DE DIVIDAS</span></a>
+        <a href="<?php echo URL . 'pendentes/onShow' ?>" class="menu-link"><span>AGENDAMENTO DE HORÁRIO</span></a>
         <br>
         <br>
         <div class="card">
             <div class="card-header">
                 <strong> AGENDAMENTO DE HORÁRIO</strong>
                 <div class="float-right">
-                    <a href="<?php echo URL . 'cliente/index' ?>" class="btn btn-light">VOLTAR</a>
+                    <a href="<?php echo URL . 'pendentes/index' ?>" class="btn btn-light">VOLTAR</a>
                 </div>
             </div>
-        
-            <form class="row g-3 needs-validation" method="POST" action="<?php echo URL . 'cliente/onSave' ?>">
+
+            <form class="row g-3 needs-validation" method="POST" action="<?php echo URL . 'pendentes/onSave' ?>">
                 <div class="card-body">
 
 
@@ -85,10 +90,10 @@ if (isset($this->dados['forma_pagamentos'])) {
                         <div class="col-sm-12 col-lg-12">
                             <div class="form-group row">
                                 <div class="col-sm-12 input-group has-validation">
-                                    <select  class="form-control js-example-basic-single" name="cliente" id="select-busca1">
+                                    <select class="form-control js-example-basic-single" name="cliente" id="select-busca1">
                                         <?php if ($users) {
                                             foreach ($users as $user) { ?>
-                                                <option value="<?= $user->id_user ?>"><?= $user->nome_user ?></option>
+                                                <option value="<?= $user->id_user ?>" <?php echo isset($servico->user_id) ? (($servico->user_id == $user->id_user) ? "selected" : "") : ""; ?>><?= $user->nome_user ?></option>
                                         <?php
                                             }
                                         }
@@ -106,11 +111,11 @@ if (isset($this->dados['forma_pagamentos'])) {
                             <div class="form-group row">
                                 <label for="inputEmail3" class="col-sm-12 text-left control-label col-form-label">Forma Pagamento: <span style="color: red;" data-uw-styling-context="true">*</span></label>
                                 <div class="col-sm-12 input-group has-validation">
-                                    <select class="form-control js-example-basic-single" name="forma_pagamentos" id="select-busca2">
+                                    <select class="form-control js-example-basic-single" name="forma_pagamento_id" id="select-busca2">
 
                                         <?php if ($forma_pagamentos) {
                                             foreach ($forma_pagamentos as $f_pag) { ?>
-                                                <option value="<?= $f_pag->id ?>"><?= $f_pag->nome ?></option>
+                                                <option value="<?= $f_pag->id ?>" <?php echo isset($servico->forma_pagamento_id) ? (($servico->forma_pagamento_id == $f_pag->id) ? "selected" : "") : ""; ?>><?= $f_pag->nome ?></option>
                                         <?php
                                             }
                                         }
@@ -124,10 +129,10 @@ if (isset($this->dados['forma_pagamentos'])) {
                             <div class="form-group row">
                                 <label for="inputEmail3" class="col-sm-4 text-left control-label col-form-label">Status:</label>
                                 <div class="col-sm-12 input-group has-validation">
-                                    <select  class="form-control js-example-basic-single" name="status" id="select-busca3">
-                                        <option value="1">AGURDANDO</option>
-                                        <option value="2">AGENDADO</option>
-                                        <option value="3">CONCLUIDO</option>
+                                    <select class="form-control js-example-basic-single" name="status" id="select-busca3">
+                                        <option value="1" <?php echo isset($servico->status) ? (($servico->status ==  1) ? "selected" : "") : ""; ?>>AGURDANDO</option>
+                                        <option value="2" <?php echo isset($servico->status) ? (($servico->status ==  2) ? "selected" : "") : ""; ?>>AGENDADO</option>
+                                        <option value="3" <?php echo isset($servico->status) ? (($servico->status ==  3) ? "selected" : "") : ""; ?>>CONCLUIDO</option>
                                     </select>
                                 </div>
                             </div>
@@ -137,12 +142,12 @@ if (isset($this->dados['forma_pagamentos'])) {
                             <div class="form-group row">
                                 <label for="inputEmail3" class="col-sm-12 text-left control-label col-form-label">Data e Hora do Antendimento: <span style="color: red;" data-uw-styling-context="true">*</span></label>
                                 <div class="col-sm-12 input-group has-validation">
-                                    <input type="datetime-local"  class="form-control" id="date" name="data_gasto" value="<?php echo isset($dividas->data_gasto) ? $dividas->data_gasto : ""; ?>" placeholder="" required>
+                                    <input type="datetime-local" class="form-control" id="horario_agendado" name="horario_agendado" value="<?php echo isset($servico->horario_agendado) ?$servico->horario_agendado : ""; ?>" placeholder="" required>
 
                                 </div>
                             </div>
                         </div>
-                        <input type="hidden" class="form-control" id="id" name="id" value="<?php echo isset($dividas->id) ? $dividas->id : ""; ?>">
+                        <input type="hidden" class="form-control" id="id" name="id" value="<?php echo isset($servico->id) ? $servico->id : ""; ?>">
                     </div>
 
 
@@ -199,23 +204,17 @@ if (isset($this->dados['forma_pagamentos'])) {
                                 } ?>
                             </div>
                         </div>
-                        <input type="hidden" class="form-control" id="id" name="id" value="<?php echo isset($servico->id) ? $servico->id : ""; ?>">
-
-
-                        <!-- <textarea rows="20" class="form-control" id="id" name="id">
-                        </textarea> -->
-
                     </div>
                     <div class="card-footer text-center">
                         <button type="submit" class="btn btn-primary mr-2">SALVAR</button>
                     </div>
                 </div>
             </form>
-            <h2 style=" background-color: #fff1d6;" class="mb-1 mb-sm-0"><label class="col-sm-12 text-center control-label col-form-label">Horários</label></h2>
+            <h2 style=" background-color: #ffdcc5;" class="mb-1 mb-sm-0"><label class="col-sm-12 text-center control-label col-form-label">Horários</label></h2>
 
             <div class="card-body">
 
-                <div class="row" style="background-color:#fff1d6;">
+                <div class="row" style="background-color:#ffdcc5;">
 
                     <?php
                     if ($semanas) {

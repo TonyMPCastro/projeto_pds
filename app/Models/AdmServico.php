@@ -42,7 +42,7 @@ class AdmServico extends Conn
         try {
             $this->dados = $dados;
             $this->conn = $this->connect();
-            $query_val = "SELECT * FROM servico WHERE status = 1";
+            $query_val = "SELECT * FROM servico";
             $result_val = $this->conn->prepare($query_val);
             $result_val->execute();
             $this->resultadoBd = json_decode(json_encode($result_val->fetchAll()), FALSE);
@@ -260,16 +260,22 @@ class AdmServico extends Conn
             $this->dados = $dados;
             $this->conn = $this->connect();
             $query_val = "UPDATE marcacao_servico SET 
-            servicos = :servicos,horarios_id = :horarios_id, data_hora_at = :data_hora_at
+            servicos = :servicos, forma_pagamento_id = :forma_pagamento_id,
+            horario_agendado = :horario_agendado, status = :st,
+            horarios_id = :horarios_id, data_hora_at = :data_hora_at
             WHERE id = :id";
             $result_val = $this->conn->prepare($query_val);
             $result_val->bindParam(":id", $this->dados['id'], PDO::PARAM_STR);
             $result_val->bindParam(":servicos", $this->dados['servicos'], PDO::PARAM_STR);
             $result_val->bindParam(":horarios_id", $this->dados['horarios_id'], PDO::PARAM_STR);
             $result_val->bindParam(":data_hora_at", $this->dados['data_hora_at'], PDO::PARAM_STR);
+            $result_val->bindParam(":forma_pagamento_id", $this->dados['forma_pagamento_id'], PDO::PARAM_STR);
+            $result_val->bindParam(":horario_agendado", $this->dados['horario_agendado'], PDO::PARAM_STR);
+            $result_val->bindParam(":st", $this->dados['status'], PDO::PARAM_STR);
+
             if ($result_val->execute()) {
                 $this->resultadoBd[0] = "Log Update Marcacao Servico";
-                $this->resultadoBd["id_m_servico"] = $this->dados['id'];
+                $this->resultadoBd["m_servico"] = $this->dados;
                 $this->log(json_encode($this->resultadoBd, true));
                 return true;
             } else {

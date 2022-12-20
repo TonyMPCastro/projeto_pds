@@ -32,11 +32,11 @@ date_default_timezone_set('America/Sao_Paulo');
     <br>
     <br>
 
-    <h2 style="border: solid #d9d3c7 ; background-color: #fff1d6;" class="mb-1 mb-sm-0"><label class="col-sm-12 text-center control-label col-form-label">Horários</label></h2>
+    <h2 style="border: solid #d9d3c7 ; background-color: #ffdcc5;" class="mb-1 mb-sm-0"><label class="col-sm-12 text-center control-label col-form-label">Horários</label></h2>
 
     <div class="card-body" >
 
-      <div class="row" style="background-color:#fff1d6;">
+      <div class="row" style="background-color:#ffdcc5;">
 
         <?php 
         if ($semanas) {

@@ -76,12 +76,12 @@ class Home2
         $s_form = "";
 
         foreach ($servicos as $s) {
-			$a = isset($_POST["id_".$s->id]) ? $_POST["id_".$s->id] : null;
-
-			if($a != null){
-				$s_form .= $s_form.';'.$a;
-			}
+			$a = isset($_POST["id_".$s->id]) ? true : false;
+            if($a){
+               $s_form .= ';'.$s->id; 
+            }	
 		}
+
         $this->dados['servicos'] = $s_form;
 
         if ($this->dados['id']) {

@@ -43,7 +43,9 @@ class Permissao
                 "adm",
                 "adm_user",
                 "servico_adm",
-                "cliente",
+                "pendentes",
+                "agendados",
+                "ordens",
                 "financeiro"
             ];
         }

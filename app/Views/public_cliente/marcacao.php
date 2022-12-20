@@ -20,7 +20,7 @@ if (isset($this->dados['servicos'])) {
   $servicos = [];
 }
 
-$table = 3;
+$table = 7;
 ?>
 <?php
 //include "app/Views/menu_footer/menu.php"; 

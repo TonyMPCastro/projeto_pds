@@ -21,7 +21,7 @@ $servicos = [];
 }
 
 
-$table = 3;
+$table = 8;
 ?>
 <?php 
 //include "app/Views/menu_footer/menu.php"; 
@@ -40,7 +40,7 @@ use app\Lib\Mask;
   <div class="content-wrapper">
     <a href="<?php echo URL . 'home/onShow' ?>" class="menu-link" title="Home"><i class="mdi mdi-home"></i></a>
     >
-    <a href="<?php echo URL . 'servico_adm/index' ?>" class="menu-link"><span>LISTAGEM DE HORÁRIOS</span></a>
+    <a href="<?php echo URL . 'pendentes/index' ?>" class="menu-link"><span>HORÁRIOS PENDENTES</span></a>
 
     <br>
     <br>
@@ -50,7 +50,7 @@ use app\Lib\Mask;
       </div>
       <br>
       <div class="text-center">
-        <a href="<?php echo URL . 'cliente/onShow' ?>" class="btn btn-outline-success btn-lg">AGENDAR HORÁRIO</a>
+        <a href="<?php echo URL . 'pendentes/onShow' ?>" class="btn btn-outline-success btn-lg">AGENDAR HORÁRIO</a>
       </div>
       <br>
       <table id="example<?= $table; ?>" class="display" style="width:100%">
@@ -85,7 +85,7 @@ use app\Lib\Mask;
               ?>
               <tr>
                 <td style='font-size:28px'>
-                  <a href="<?php echo URL . 'servico_adm/onEdit?id=' . $lista_em_abertas_1->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
+                  <a href="<?php echo URL . 'pendentes/onEdit?id=' . $lista_em_abertas_1->id; ?>" title="Editar" data-toggle="popover" data-trigger="hover" data-content="Some content">
                     <i style="color:#0090e7;" class='mdi mdi-table-edit'></i>
                   </a>
                   <!-- &nbsp;&nbsp;&nbsp;
