@@ -32,15 +32,6 @@ if (isset($this->dados['servicos'])) {
 
 ?>
 
-<style>
-    input[type=checkbox] {
-        transform: scale(1.5);
-    }
-
-    input[type=radio] {
-        transform: scale(1.5);
-    }
-</style>
 
 <?php require_once("app/Views/menu_footer/menu.php"); ?>
 <!-- partial -->

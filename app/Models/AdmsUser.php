@@ -231,7 +231,7 @@ class AdmsUser extends Conn
             $this->dados = $dados;
             $this->conn = $this->connect();
             $query_val = "INSERT INTO user (nome_user, email,telefone,cpf, data_nascimento, senha, tipo_user_id, status_user) 
-            VALUES (:nome_user, :email, :telefone,:cpf, :data_nascimento, :senha, :tipo_user_id, :status_user)";
+            VALUES (:nome_user, :email, :telefone,:cpf, :data_nascimento, md5(:senha), :tipo_user_id, :status_user)";
             $result_val = $this->conn->prepare($query_val);
             $result_val->bindParam(":nome_user", $this->dados['nome_user'], PDO::PARAM_STR);
             $result_val->bindParam(":email", $this->dados['email'], PDO::PARAM_STR);

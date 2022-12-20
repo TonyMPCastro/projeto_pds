@@ -16,6 +16,15 @@ if (isset($this->dados['menu'])) {
   <!-- Layout styles -->
   <link rel="stylesheet" href="<?php echo URL . 'app/assets/css/style.css'; ?>">
   <!-- End layout styles -->
+  <style>
+    input[type=checkbox] {
+        transform: scale(1.5);
+    }
+
+    input[type=radio] {
+        transform: scale(1.5);
+    }
+</style>
 
 </head>
 
