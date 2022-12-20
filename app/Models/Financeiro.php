@@ -79,6 +79,28 @@ class Financeiro extends Conn
     }
 
 
+    public function get_horario(array $dados = null){
+        try {
+            $this->dados = $dados;
+            $this->conn = $this->connect();
+            $query_val = "SELECT * FROM horarios WHERE id = :id";
+            $result_val = $this->conn->prepare($query_val);
+            $result_val->bindParam(":id", $this->dados['id'], PDO::PARAM_STR);
+            $result_val->execute();
+            $this->resultadoBd = json_decode(json_encode($result_val->fetch()), FALSE);
+            if ($this->resultadoBd) {
+                return $this->resultadoBd;
+            } else {
+                throw new PDOException("Erro: Não foi possível executar a declaração sql");
+                return $this->resultadoBd;
+            }
+        } catch (PDOException $erro) {
+            echo $erro->getMessage();
+        }
+    }
+
+
+
     public function salve_forma_pag(array $dados = null){
         try {
             $this->dados = $dados;
@@ -235,6 +257,29 @@ class Financeiro extends Conn
             return false;
         }
     }
+
+
+
+    public function get_horarios(array $dados = null){
+        try {
+            $this->dados = $dados;
+            $this->conn = $this->connect();
+            $query_val = "SELECT h.id,s.dia,h.horario,h.status FROM horarios h
+            join semana s on s.id = h.semana_id
+            order by h.semana_id ASC, h.horario ASC";
+            $result_val = $this->conn->prepare($query_val);
+            $result_val->execute();
+            $this->resultadoBd = json_decode(json_encode($result_val->fetchAll()), FALSE);
+            if ($this->resultadoBd) {
+                return $this->resultadoBd;
+            } else {
+                throw new PDOException("Erro: Não foi possível executar a declaração sql");
+                return $this->resultadoBd;
+            }
+        } catch (PDOException $erro) {
+            echo $erro->getMessage();
+        }
+    } 
 
 
 }

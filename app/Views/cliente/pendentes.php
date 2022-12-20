@@ -1,11 +1,7 @@
 <?php
-
 if (!defined('4578S9')) {
     header("Location: /");
     die("Erro: Página não encontrada!");
-}
-if (isset($this->dados['menu'])) {
-    $menu = $this->dados['menu'];
 }
 
 if (isset($this->dados['lista_em_abertas'])) {

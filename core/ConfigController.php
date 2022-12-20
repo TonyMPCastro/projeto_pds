@@ -71,10 +71,6 @@ class ConfigController
             $classeCarregar->onEdit();  
           }
 
-          if($this->urlMetodo == "onEdit_d"){
-            $classeCarregar->onEdit_d();  
-          }
-
           if($this->urlMetodo == "onEdit_f"){
             $classeCarregar->onEdit_f();  
           }
@@ -112,7 +108,25 @@ class ConfigController
             $classeCarregar->onFormaPagamentoSave();  
           }
 
-          
+          if($this->urlMetodo == "onEdit_d"){
+            $classeCarregar->onEdit_d();  
+          }
+
+          if($this->urlMetodo == "horarios"){
+            $classeCarregar->horarios();  
+          }
+
+          if($this->urlMetodo == "onHorario"){
+            $classeCarregar->onHorario();  
+          }
+
+          if($this->urlMetodo == "onHorarioSave"){
+            $classeCarregar->onHorarioSave();  
+          }
+
+          if($this->urlMetodo == "onEdit_h"){
+            $classeCarregar->onEdit_h();  
+          }
         
     }
     

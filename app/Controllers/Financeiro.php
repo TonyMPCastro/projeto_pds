@@ -37,6 +37,66 @@ class Financeiro{
     }
 
 
+    public function horarios(){//metodo que mostra a grid de forma de pagamento
+        $cliente = new \App\Models\Financeiro();
+        $visualizarLogin = new \App\Models\AdmsUser();
+        $this->dados['tipo_user_id'] = $_SESSION['tipo_user_id'];
+        $this->dados['menu'] = $visualizarLogin->menu_adm($this->dados);
+        $this->dados['horarios'] = $cliente->get_horarios($this->dados);
+        $this->dados['status'] = ($this->Exception) ? $this->Exception : '';
+        $carregarView = new \Core\ConfigView("Views/cliente/horarios", $this->dados);
+        $carregarView->renderizar();
+    }
+
+    public function onHorario(){//mostra o FORM de forma de pagamento
+        $admUser = new \App\Models\AdmsUser();
+        $this->dados['tipo_user_id'] = $_SESSION['tipo_user_id'];
+        $this->dados['menu'] = $admUser->menu_adm($this->dados);
+        $carregarView = new \Core\ConfigView("Views/cliente/cad_horario", $this->dados);
+        $carregarView->renderizar();
+    }
+    public function onHorarioSave(){ //Metodo para salvar a forma de pagamento
+        $financeiro = new \App\Models\Financeiro();
+        $this->dados['id'] = $_POST["id"] ? $_POST["id"] : null;
+        $this->dados['semana_id'] = $_POST["semana_id"] ? $_POST["semana_id"] : null;
+        $this->dados['horario'] = $_POST["horario"] ? $_POST["horario"] : null;
+        $this->dados['tipo_taxa'] = $_POST["tipo_taxa"] ? $_POST["tipo_taxa"] : null;
+        $this->dados['status'] = $_POST["status"] ? $_POST["status"] : null;
+
+        if ($this->dados['id']) {
+            $ret = $financeiro->update_forma_pag($this->dados);
+            if ($ret) {
+                $this->Exception = 'a';
+            }else{
+                $this->Exception = 'a_n';
+            }
+        } else {
+            $ret = $financeiro->salve_forma_pag($this->dados);
+            if ($ret) {
+                $this->Exception = 's';
+            }else{
+                $this->Exception = 's_n';
+            }
+        }
+        
+        $this->formaPagamento();
+    }
+   
+    public function onEdit_h(){
+        $admUser = new \App\Models\AdmsUser();
+        $financeiro = new \App\Models\Financeiro();
+        $this->dados['tipo_user_id'] = $_SESSION['tipo_user_id'];
+        $this->dados['menu'] = $admUser->menu_adm($this->dados);
+        $this->dados['id'] = $_GET["id"] ? $_GET["id"] : null;
+        $this->dados['horario'] = $financeiro->get_horario($this->dados);
+
+        $carregarView = new \Core\ConfigView("Views/cliente/cad_horario", $this->dados);
+        $carregarView->renderizar();
+    }
+
+
+
+
     public function onFormaPagamento(){//mostra o FORM de forma de pagamento
         $admUser = new \App\Models\AdmsUser();
         $this->dados['tipo_user_id'] = $_SESSION['tipo_user_id'];
